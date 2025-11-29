@@ -2,17 +2,17 @@
   {
     "id": 1,
     "name": "Александр",
-    "city": "Москва",
+    "location": "Москва",
     "likes": 12,
     "isLiked": false,
     "age": 28,
     "createdAt": "2025-09-22T14:30:00.000Z",
     "description": "Обожаю превращать хаос в структуру. Когда все процессы отлажены - это настоящая магия!",
-    "img": "https://img.freepik.com/free-photo/closeup-shot-fashionable-handsome-male-blue-classic-shirt_181624-29628.jpg?t=st=1764349495~exp=1764353095~hmac=134058621e3c1446f340b5d65521749a48420f013db0837d188f2d472c75d1c1&w=1480",
-    "teach": ["Проектное управление"],
-    "learn": ["Английский", "Китайский", "Маркетинг и реклама", "Коучинг"],
+    "avatarUrl": "https://img.freepik.com/free-photo/closeup-shot-fashionable-handsome-male-blue-classic-shirt_181624-29628.jpg?t=st=1764349495~exp=1764353095~hmac=134058621e3c1446f340b5d65521749a48420f013db0837d188f2d472c75d1c1&w=1480",
+    "skillCanTeach": ["Проектное управление"],
+    "subcategoriesWantToLearn": ["Английский", "Китайский", "Маркетинг и реклама", "Коучинг"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
@@ -24,22 +24,22 @@
   {
     "id": 2,
     "name": "Екатерина",
-    "city": "Санкт-Петербург",
+    "location": "Санкт-Петербург",
     "likes": 8,
     "isLiked": false,
     "age": 24,
     "createdAt": "2025-10-05T09:15:00.000Z",
     "description": "Живу в ритме английской речи. Для меня язык - это музыка, а грамматика - её гармония.",
-    "img": "https://img.freepik.com/free-photo/playful-woman-holding-yellow-balloon_23-2148490462.jpg?t=st=1764351743~exp=1764355343~hmac=ca9acce9f20bbb69f7893691f1f197068d09a24784b3b630db5af8836207c337&w=1060",
-    "teach": ["Английский"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/playful-woman-holding-yellow-balloon_23-2148490462.jpg?t=st=1764351743~exp=1764355343~hmac=ca9acce9f20bbb69f7893691f1f197068d09a24784b3b630db5af8836207c337&w=1060",
+    "skillCanTeach": ["Английский"],
+    "subcategoriesWantToLearn": [
       "Рисование и иллюстрация",
       "Йога и медитация",
       "Декор и DIY",
       "Питание и ЗОЖ"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://static.tildacdn.one/tild3032-3461-4165-b661-656464323064/yabanci.jpeg",
       "https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/90/85/4f/90854f21-d484-1041-eda7-6c24810338bf/mza_16670632695750822409.jpg/1200x1200bb.jpg",
       "https://sneg.top/uploads/posts/2023-04/1681977836_sneg-top-p-inostrannie-yaziki-kartinki-dlya-prezentat-49.jpg",
@@ -51,17 +51,17 @@
   {
     "id": 3,
     "name": "Дмитрий",
-    "city": "Новосибирск",
+    "location": "Новосибирск",
     "likes": 15,
     "isLiked": false,
     "age": 31,
     "createdAt": "2025-10-18T16:45:00.000Z",
     "description": "Вдохновляюсь историями брендов-легенд. Маркетинг для меня - искусство рассказывать правильные истории.",
-    "img": "https://img.freepik.com/free-photo/vertical-shot-young-handsome-guy-autumn-park_181624-51688.jpg?t=st=1764349565~exp=1764353165~hmac=8111be9f7876b1f2a791fca1c61138c1098660f813acf717eeb287b2fda20882&w=1060",
-    "teach": ["Маркетинг и реклама"],
-    "learn": ["Немецкий", "Фотография", "Скорочтение", "Физические тренировки"],
+    "avatarUrl": "https://img.freepik.com/free-photo/vertical-shot-young-handsome-guy-autumn-park_181624-51688.jpg?t=st=1764349565~exp=1764353165~hmac=8111be9f7876b1f2a791fca1c61138c1098660f813acf717eeb287b2fda20882&w=1060",
+    "skillCanTeach": ["Маркетинг и реклама"],
+    "subcategoriesWantToLearn": ["Немецкий", "Фотография", "Скорочтение", "Физические тренировки"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://scpk.pro/media/img/courses/i_24.webp",
       "https://i.pinimg.com/736x/7f/22/e3/7f22e398704702c7eb1c20463501fd67.jpg",
       "https://www.crantia.com/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-04-at-2.52.50-PM-2.jpeg",
@@ -73,22 +73,22 @@
   {
     "id": 4,
     "name": "Ольга",
-    "city": "Екатеринбург",
+    "location": "Екатеринбург",
     "likes": 20,
     "isLiked": false,
     "age": 26,
     "createdAt": "2025-11-02T11:20:00.000Z",
     "description": "Превращаю хаос в гармонию. Для меня порядок в пространстве - это порядок в мыслях.",
-    "img": "https://img.freepik.com/free-photo/side-view-woman-holding-notebook-pencil_23-2148372248.jpg?t=st=1764351703~exp=1764355303~hmac=706e79372e880b0366e27bf70b90fd426a34041babd9af3a0f626ec31ae62f51&w=1060",
-    "teach": ["Уборка и организация"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/side-view-woman-holding-notebook-pencil_23-2148372248.jpg?t=st=1764351703~exp=1764355303~hmac=706e79372e880b0366e27bf70b90fd426a34041babd9af3a0f626ec31ae62f51&w=1060",
+    "skillCanTeach": ["Уборка и организация"],
+    "subcategoriesWantToLearn": [
       "Французский",
       "Актёрское мастерство",
       "Ментальное здоровье",
       "Личностное развитие"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://image.cdn2.seaart.me/2024-02-20/cnadq8le878c73d9mjeg/50e9d15c61f3d620bb3c10687bf3eded50dc2954_high.webp",
       "https://i.pinimg.com/736x/0f/94/11/0f94114633e8257fca8c730cc3a72c7a.jpg",
       "https://avatars.mds.yandex.net/get-shedevrum/15236108/img_43932ae3297a11f09593aa6a96a2c431/orig",
@@ -100,17 +100,17 @@
   {
     "id": 5,
     "name": "Михаил",
-    "city": "Казань",
+    "location": "Казань",
     "likes": 5,
     "isLiked": false,
     "age": 22,
     "createdAt": "2025-09-25T08:30:00.000Z",
     "description": "Обожаю момент, когда переговоры превращаются в взаимовыгодное партнерство. Это как шахматная партия!",
-    "img": "https://img.freepik.com/free-photo/front-view-smiley-man-outdoors-city_23-2148955558.jpg?t=st=1764349724~exp=1764353324~hmac=b7fdf7b5f4ab4a524cc8f52a7e47671fde8eb707284255c14364408e4f3d6e1f&w=1060",
-    "teach": ["Продажи и переговоры"],
-    "learn": ["Японский", "Видеомонтаж", "Навыки обучения", "Осознанность"],
+    "avatarUrl": "https://img.freepik.com/free-photo/front-view-smiley-man-outdoors-city_23-2148955558.jpg?t=st=1764349724~exp=1764353324~hmac=b7fdf7b5f4ab4a524cc8f52a7e47671fde8eb707284255c14364408e4f3d6e1f&w=1060",
+    "skillCanTeach": ["Продажи и переговоры"],
+    "subcategoriesWantToLearn": ["Японский", "Видеомонтаж", "Навыки обучения", "Осознанность"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
@@ -122,22 +122,22 @@
   {
     "id": 6,
     "name": "Анна",
-    "city": "Нижний Новгород",
+    "location": "Нижний Новгород",
     "likes": 18,
     "isLiked": false,
     "age": 29,
     "createdAt": "2025-10-12T13:10:00.000Z",
     "description": "Живопись для меня - это медитация. Люблю, когда краски на холсте оживают и рассказывают истории.",
-    "img": "https://img.freepik.com/free-photo/thinking-long-haired-girl_1398-438.jpg?t=st=1764351671~exp=1764355271~hmac=300fc0756b7facea36a12df4330a68c0ff6b6098d5a5ddaefb9f9c7bb529c0e3&w=1060",
-    "teach": ["Рисование и иллюстрация"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/thinking-long-haired-girl_1398-438.jpg?t=st=1764351671~exp=1764355271~hmac=300fc0756b7facea36a12df4330a68c0ff6b6098d5a5ddaefb9f9c7bb529c0e3&w=1060",
+    "skillCanTeach": ["Рисование и иллюстрация"],
+    "subcategoriesWantToLearn": [
       "Испанский",
       "Домашние растения",
       "Креативное письмо",
       "Сон и восстановление"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/736x/9d/17/c4/9d17c4ade3f5245dfd109b87c2c134df.jpg",
       "https://avatars.mds.yandex.net/i?id=66c959494ead1c4da8595d31913bdf85_l-12937750-images-thumbs&n=13",
       "https://static.tildacdn.com/stor6233-3337-4335-b836-353764326535/78969050.jpg",
@@ -150,22 +150,22 @@
   {
     "id": 7,
     "name": "Сергей",
-    "city": "Челябинск",
+    "location": "Челябинск",
     "likes": 9,
     "isLiked": false,
     "age": 33,
     "createdAt": "2025-11-15T17:25:00.000Z",
     "description": "Живу по принципу 'сделал дело - гуляй смело'. Для меня тайм-менеджмент - это свобода, а не ограничение.",
-    "img": "https://img.freepik.com/free-photo/medium-shot-young-man-holding-flower_23-2149438497.jpg?t=st=1764349633~exp=1764353233~hmac=976dfe50cfca32afbdcc459e82c9dfff4dade63f8cc5beaa63efea2e17411996&w=1060",
-    "teach": ["Тайм-менеджмент"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/medium-shot-young-man-holding-flower_23-2149438497.jpg?t=st=1764349633~exp=1764353233~hmac=976dfe50cfca32afbdcc459e82c9dfff4dade63f8cc5beaa63efea2e17411996&w=1060",
+    "skillCanTeach": ["Тайм-менеджмент"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Приготовление еды",
       "Музыка и звук",
       "Баланс жизни и работы"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://cdn.xl.pt/notasemdia/uploads/2017/06/Dicas-para-rentabilizar-o-seu-tempo-768x768.jpg",
       "https://avatars.mds.yandex.net/i?id=0b9de3ee0de2d1c4d82cef5ba9d9dc62_l-6356719-images-thumbs&n=13",
       "https://static.vecteezy.com/system/resources/previews/016/177/688/large_2x/timetable-planning-illustration-concept-character-managing-work-tasks-time-management-and-organization-concept-deadline-using-calendar-illustration-vector.jpg",
@@ -177,22 +177,22 @@
   {
     "id": 8,
     "name": "Наталья",
-    "city": "Самара",
+    "location": "Самара",
     "likes": 22,
     "isLiked": false,
     "age": 27,
     "createdAt": "2025-10-28T10:45:00.000Z",
     "description": "Верю, что творчество лечит душу. Арт-терапия для меня - мостик между внутренним миром и реальностью.",
-    "img": "https://img.freepik.com/free-photo/side-view-full-length-attractive-brunette-lady-with-tail-wearing-blue-coat-light-blue-trousers-white-heels-she-is-moving-smiling-camera-urban-street_132075-9407.jpg?t=st=1764351610~exp=1764355210~hmac=a61d36402515afcebbba0df991cc023c410900316191ae0b2a23741cf63e9d73&w=1060",
-    "teach": ["Арт-терапия"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/side-view-full-length-attractive-brunette-lady-with-tail-wearing-blue-coat-light-blue-trousers-white-heels-she-is-moving-smiling-camera-urban-street_132075-9407.jpg?t=st=1764351610~exp=1764355210~hmac=a61d36402515afcebbba0df991cc023c410900316191ae0b2a23741cf63e9d73&w=1060",
+    "skillCanTeach": ["Арт-терапия"],
+    "subcategoriesWantToLearn": [
       "Французский",
       "Уборка и организация",
       "Коучинг",
       "Питание и ЗОЖ"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/736x/9d/17/c4/9d17c4ade3f5245dfd109b87c2c134df.jpg",
       "https://avatars.mds.yandex.net/i?id=66c959494ead1c4da8595d31913bdf85_l-12937750-images-thumbs&n=13",
       "https://static.tildacdn.com/stor6233-3337-4335-b836-353764326535/78969050.jpg",
@@ -205,22 +205,22 @@
   {
     "id": 9,
     "name": "Андрей",
-    "city": "Омск",
+    "location": "Омск",
     "likes": 14,
     "isLiked": false,
     "age": 25,
     "createdAt": "2025-09-30T15:20:00.000Z",
     "description": "Обожаю видеть, как у людей загораются глаза, когда они находят работу мечты. Это лучшая награда!",
-    "img": "https://img.freepik.com/free-photo/portrait-man-posing-beach-grey-coat_613910-9568.jpg?t=st=1764349802~exp=1764353402~hmac=07093728944046012766a2096ff27de96d0a89f24e77a0f884decafc2eced04b&w=1060",
-    "teach": ["Резюме и собеседование"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/portrait-man-posing-beach-grey-coat_613910-9568.jpg?t=st=1764349802~exp=1764353402~hmac=07093728944046012766a2096ff27de96d0a89f24e77a0f884decafc2eced04b&w=1060",
+    "skillCanTeach": ["Резюме и собеседование"],
+    "subcategoriesWantToLearn": [
       "Китайский",
       "Фотография",
       "Домашние финансы",
       "Ментальное здоровье"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://solia-paref.com/wp-content/uploads/2024/05/AdobeStock_552746789-1-scaled-1.jpg",
       "https://www.jobasv.net/wp-content/uploads/2021/06/Menanggapi-Pertanyaan-HRD-Ketika-Interview-Kerja-666x666.jpg",
       "https://blagoevgrad-news.com/wp-content/uploads/2019/02/zx640c_2905622.jpg",
@@ -232,22 +232,22 @@
   {
     "id": 10,
     "name": "Ирина",
-    "city": "Ростов-на-Дону",
+    "location": "Ростов-на-Дону",
     "likes": 11,
     "isLiked": false,
     "age": 30,
     "createdAt": "2025-11-08T12:30:00.000Z",
     "description": "Вдохновляюсь историями успешных стартапов. Для меня предпринимательство - это искусство возможного.",
-    "img": "https://img.freepik.com/free-photo/woman-wrapping-christmas-gift-while-sitting-carped-living-room_158595-7285.jpg?t=st=1764351547~exp=1764355147~hmac=9d45c0011168d1449687c347eedd2b16d06887303ecbcdcc25e58126a202a067&w=1060",
-    "teach": ["Предпринимательство"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/woman-wrapping-christmas-gift-while-sitting-carped-living-room_158595-7285.jpg?t=st=1764351547~exp=1764355147~hmac=9d45c0011168d1449687c347eedd2b16d06887303ecbcdcc25e58126a202a067&w=1060",
+    "skillCanTeach": ["Предпринимательство"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Рисование и иллюстрация",
       "Йога и медитация",
       "Личностное развитие"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
@@ -259,17 +259,17 @@
   {
     "id": 11,
     "name": "Алексей",
-    "city": "Уфа",
+    "location": "Уфа",
     "likes": 7,
     "isLiked": false,
     "age": 21,
     "createdAt": "2025-10-03T18:15:00.000Z",
     "description": "Немецкий для меня - это точность и порядок. Люблю, когда каждое слово стоит на своем месте.",
-    "img": "https://img.freepik.com/free-photo/vertical-shot-caucasian-male-with-red-t-shirt_181624-52255.jpg?t=st=1764349884~exp=1764353484~hmac=a99a6bb87686fbd0270a20cae16fe38d1a49af0940c71ba1f34c5dbb28a1daae&w=1060",
-    "teach": ["Немецкий"],
-    "learn": ["Маркетинг и реклама", "Видеомонтаж", "Осознанность", "Ремонт"],
+    "avatarUrl": "https://img.freepik.com/free-photo/vertical-shot-caucasian-male-with-red-t-shirt_181624-52255.jpg?t=st=1764349884~exp=1764353484~hmac=a99a6bb87686fbd0270a20cae16fe38d1a49af0940c71ba1f34c5dbb28a1daae&w=1060",
+    "skillCanTeach": ["Немецкий"],
+    "subcategoriesWantToLearn": ["Маркетинг и реклама", "Видеомонтаж", "Осознанность", "Ремонт"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://static.tildacdn.one/tild3032-3461-4165-b661-656464323064/yabanci.jpeg",
       "https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/90/85/4f/90854f21-d484-1041-eda7-6c24810338bf/mza_16670632695750822409.jpg/1200x1200bb.jpg",
       "https://sneg.top/uploads/posts/2023-04/1681977836_sneg-top-p-inostrannie-yaziki-kartinki-dlya-prezentat-49.jpg",
@@ -281,22 +281,22 @@
   {
     "id": 12,
     "name": "Мария",
-    "city": "Красноярск",
+    "location": "Красноярск",
     "likes": 19,
     "isLiked": false,
     "age": 26,
     "createdAt": "2025-11-22T09:40:00.000Z",
     "description": "Йога для меня - это диалог с собственным телом. Люблю момент, когда напряжение уходит, а приходит покой.",
-    "img": "https://img.freepik.com/free-photo/young-business-woman-using-phone-vacation_1303-23960.jpg?t=st=1764351507~exp=1764355107~hmac=5b1fcf2dfb49c05ff1a15e2d0f2730d6c2f3873fad9aee38e6839de74505ef18&w=1060",
-    "teach": ["Йога и медитация"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/young-business-woman-using-phone-vacation_1303-23960.jpg?t=st=1764351507~exp=1764355107~hmac=5b1fcf2dfb49c05ff1a15e2d0f2730d6c2f3873fad9aee38e6839de74505ef18&w=1060",
+    "skillCanTeach": ["Йога и медитация"],
+    "subcategoriesWantToLearn": [
       "Испанский",
       "Декор и DIY",
       "Навыки преподавания",
       "Домашние растения"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/originals/c0/60/21/c060215015e6d46a234cb4127af3237f.jpg",
       "https://i.pinimg.com/originals/4d/db/13/4ddb136fa723f55ce3b7bcb20f8f0f42.jpg",
       "https://www.nutritionbliss.com/wp-content/uploads/2020/01/iStock-876656828-e1580342485220.jpg",
@@ -308,22 +308,22 @@
   {
     "id": 13,
     "name": "Владимир",
-    "city": "Пермь",
+    "location": "Пермь",
     "likes": 13,
     "isLiked": false,
     "age": 34,
     "createdAt": "2025-09-28T14:50:00.000Z",
     "description": "Монтаж для меня - это магия превращения сырого материала в историю. Люблю, когда кадры оживают!",
-    "img": "https://img.freepik.com/free-photo/portrait-young-handsome-caucasian-man-park_181624-52207.jpg?t=st=1764349921~exp=1764353521~hmac=d1b63ce207d217d0efdc1bd650e8f45ba6de2b749ae17bf35d6602e7e195c29d&w=1060",
-    "teach": ["Видеомонтаж"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/portrait-young-handsome-caucasian-man-park_181624-52207.jpg?t=st=1764349921~exp=1764353521~hmac=d1b63ce207d217d0efdc1bd650e8f45ba6de2b749ae17bf35d6602e7e195c29d&w=1060",
+    "skillCanTeach": ["Видеомонтаж"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Продажи и переговоры",
       "Когнитивные техники",
       "Физические тренировки"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/originals/15/c0/fb/15c0fb976ca1dbb3540864b79ab50670.png",
       "https://yt3.googleusercontent.com/0gjXJ4oiUJnR1GMDiXDxdNdvjT89wO2oYJHpde0bBAu7QQ-nzyHIAJsO1-Ybwhe2_tVLTaZ5VA=s900-c-k-c0x00ffffff-no-rj",
       "https://i.pinimg.com/736x/77/b0/4c/77b04cd32dfe88482dfa5630991cf2f8.jpg",
@@ -335,22 +335,22 @@
   {
     "id": 14,
     "name": "Светлана",
-    "city": "Воронеж",
+    "location": "Воронеж",
     "likes": 16,
     "isLiked": false,
     "age": 28,
     "createdAt": "2025-10-25T16:05:00.000Z",
     "description": "Здоровое питание для меня - это не диета, а образ жизни. Люблю, когда еда приносит и удовольствие, и пользу!",
-    "img": "https://img.freepik.com/free-photo/teenage-girl-lifestyle-concept_23-2148093980.jpg?t=st=1764351473~exp=1764355073~hmac=eaac03d0c6f646104e3731b0cd0e51f6a61f710ed62cc583d84ff76422ea275b&w=1060",
-    "teach": ["Питание и ЗОЖ"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/teenage-girl-lifestyle-concept_23-2148093980.jpg?t=st=1764351473~exp=1764355073~hmac=eaac03d0c6f646104e3731b0cd0e51f6a61f710ed62cc583d84ff76422ea275b&w=1060",
+    "skillCanTeach": ["Питание и ЗОЖ"],
+    "subcategoriesWantToLearn": [
       "Французский",
       "Актёрское мастерство",
       "Уборка и организация",
       "Коучинг"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/originals/c0/60/21/c060215015e6d46a234cb4127af3237f.jpg",
       "https://i.pinimg.com/originals/4d/db/13/4ddb136fa723f55ce3b7bcb20f8f0f42.jpg",
       "https://www.nutritionbliss.com/wp-content/uploads/2020/01/iStock-876656828-e1580342485220.jpg",
@@ -362,22 +362,22 @@
   {
     "id": 15,
     "name": "Павел",
-    "city": "Волгоград",
+    "location": "Волгоград",
     "likes": 10,
     "isLiked": false,
     "age": 23,
     "createdAt": "2025-11-18T11:55:00.000Z",
     "description": "Финансы для меня - это пазл, где все детали должны сложиться в красивую картину финансовой свободы.",
-    "img": "https://img.freepik.com/free-photo/portrait-young-handsome-man-with-curly-hair_1303-27415.jpg?t=st=1764349990~exp=1764353590~hmac=82510b1916196dd702938fd08a30313f9e03094e4e2739f9228d53f9ff1d3b58&w=1060",
-    "teach": ["Домашние финансы"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/portrait-young-handsome-man-with-curly-hair_1303-27415.jpg?t=st=1764349990~exp=1764353590~hmac=82510b1916196dd702938fd08a30313f9e03094e4e2739f9228d53f9ff1d3b58&w=1060",
+    "skillCanTeach": ["Домашние финансы"],
+    "subcategoriesWantToLearn": [
       "Китайский",
       "Фотография",
       "Личный бренд",
       "Сон и восстановление"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://m.foolcdn.com/media/affiliates/images/Couple_paying_bills-1_tEyxqjE.2e16d0ba.fill-1080x1080.jpg",
       "https://sun9-45.userapi.com/impg/t30-v7tlugixjIVCCJN1W-qkfxYDTAllNhg9DA/SDPtbHlvD38.jpg?size=807x807&quality=96&sign=25a3cf298ebf520a0d1213e71850053b&c_uniq_tag=MTIVchtMq0JjkL1atREDtojYCaj_DGvuS_AikRDnopM&type=album",
       "https://avatars.mds.yandex.net/i?id=24efbd92b2f32a429eb9ab88d689160b_l-4793215-images-thumbs&n=13",
@@ -389,22 +389,22 @@
   {
     "id": 16,
     "name": "Юлия",
-    "city": "Краснодар",
+    "location": "Краснодар",
     "likes": 24,
     "isLiked": false,
     "age": 31,
     "createdAt": "2025-10-08T13:25:00.000Z",
     "description": "Французский для меня - это не просто язык, а целый мир элегантности и изысканности. C'est magnifique!",
-    "img": "https://img.freepik.com/free-photo/smiling-blonde-young-woman-holding-disposable-coffee-cup-standing-street-winter_23-2147928529.jpg?t=st=1764351409~exp=1764355009~hmac=8aed590921a2749be399222e35f5f2f1c35264b1aff50c62771f9a4862f0d2c8&w=1060",
-    "teach": ["Французский"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/smiling-blonde-young-woman-holding-disposable-coffee-cup-standing-street-winter_23-2147928529.jpg?t=st=1764351409~exp=1764355009~hmac=8aed590921a2749be399222e35f5f2f1c35264b1aff50c62771f9a4862f0d2c8&w=1060",
+    "skillCanTeach": ["Французский"],
+    "subcategoriesWantToLearn": [
       "Рисование и иллюстрация",
       "Проектное управление",
       "Ментальное здоровье",
       "Декор и DIY"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://static.tildacdn.one/tild3032-3461-4165-b661-656464323064/yabanci.jpeg",
       "https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/90/85/4f/90854f21-d484-1041-eda7-6c24810338bf/mza_16670632695750822409.jpg/1200x1200bb.jpg",
       "https://sneg.top/uploads/posts/2023-04/1681977836_sneg-top-p-inostrannie-yaziki-kartinki-dlya-prezentat-49.jpg",
@@ -416,22 +416,22 @@
   {
     "id": 17,
     "name": "Иван",
-    "city": "Саратов",
+    "location": "Саратов",
     "likes": 6,
     "isLiked": false,
     "age": 20,
     "createdAt": "2025-11-25T15:10:00.000Z",
     "description": "Музыка для меня - это универсальный язык эмоций. Люблю, когда звук рождает мурашки по коже!",
-    "img": "https://img.freepik.com/free-photo/low-angle-portrait-man-looking-away_23-2148194054.jpg?t=st=1764350022~exp=1764353622~hmac=47d52cfa62c84c007b62aa976e6a621c0dd926cb626c6485c20c4aa165a3fcb0&w=1060",
-    "teach": ["Музыка и звук"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/low-angle-portrait-man-looking-away_23-2148194054.jpg?t=st=1764350022~exp=1764353622~hmac=47d52cfa62c84c007b62aa976e6a621c0dd926cb626c6485c20c4aa165a3fcb0&w=1060",
+    "skillCanTeach": ["Музыка и звук"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Предпринимательство",
       "Скорочтение",
       "Баланс жизни и работы"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://mvc-tver.ru/templates/yootheme/cache/anons-86f4491e.jpeg",
       "https://yt3.ggpht.com/a/AATXAJzur3ClKPaJ6wP2f5d6if9RECtVSDxgwitRNQ=s900-c-k-c0xffffffff-no-rj-mo",
       "https://cdn.culture.ru/images/0906b37f-31b7-5994-9c3e-69d711ea8aa0",
@@ -443,22 +443,22 @@
   {
     "id": 18,
     "name": "Татьяна",
-    "city": "Тюмень",
+    "location": "Тюмень",
     "likes": 17,
     "isLiked": false,
     "age": 29,
     "createdAt": "2025-10-15T10:30:00.000Z",
     "description": "Растения для меня - это тихие друзья, которые делают дом уютнее. Люблю наблюдать, как они растут!",
-    "img": "https://img.freepik.com/free-photo/smiling-lady-smart-trendy-wear-is-sitting-armchair-with-cup-tea_158595-7467.jpg?t=st=1764351374~exp=1764354974~hmac=ede4d9062cfc440f045ef26d1a50b02712e72c6019c93d048faf9f47b4a57e5f&w=1060",
-    "teach": ["Домашние растения"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/smiling-lady-smart-trendy-wear-is-sitting-armchair-with-cup-tea_158595-7467.jpg?t=st=1764351374~exp=1764354974~hmac=ede4d9062cfc440f045ef26d1a50b02712e72c6019c93d048faf9f47b4a57e5f&w=1060",
+    "skillCanTeach": ["Домашние растения"],
+    "subcategoriesWantToLearn": [
       "Немецкий",
       "Креативное письмо",
       "Тайм-менеджмент",
       "Питание и ЗОЖ"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/originals/08/54/4f/08544fae757659a2808827d362ee694a.webp",
       "https://orton.ru/upload/iblock/8df/yr5c0q2203w1h5v0m9x21hc23ynkog7y.jpg",
       "https://64.media.tumblr.com/b3ccb570338a868e649d3e1820e91483/4ba63a61ae633ba5-6d/s1280x1920/a85a374dd7a35945570ef44acc3629e5810a09cd.jpg",
@@ -470,17 +470,17 @@
   {
     "id": 19,
     "name": "Николай",
-    "city": "Тольятти",
+    "location": "Тольятти",
     "likes": 8,
     "isLiked": false,
     "age": 35,
     "createdAt": "2025-09-23T17:40:00.000Z",
     "description": "Ремонт для меня - это творчество. Люблю, когда из старого и невзрачного рождается новое и красивое!",
-    "img": "https://img.freepik.com/free-photo/smiley-man-relaxing-outdoors_23-2148739334.jpg?t=st=1764350059~exp=1764353659~hmac=ae1852693f53e74971baa253ce928dcde68466bef8b50f94747318fa1431af6d&w=1060",
-    "teach": ["Ремонт"],
-    "learn": ["Японский", "Маркетинг и реклама", "Арт-терапия", "Осознанность"],
+    "avatarUrl": "https://img.freepik.com/free-photo/smiley-man-relaxing-outdoors_23-2148739334.jpg?t=st=1764350059~exp=1764353659~hmac=ae1852693f53e74971baa253ce928dcde68466bef8b50f94747318fa1431af6d&w=1060",
+    "skillCanTeach": ["Ремонт"],
+    "subcategoriesWantToLearn": ["Японский", "Маркетинг и реклама", "Арт-терапия", "Осознанность"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://image.cdn2.seaart.me/2024-02-20/cnadq8le878c73d9mjeg/50e9d15c61f3d620bb3c10687bf3eded50dc2954_high.webp",
       "https://i.pinimg.com/736x/0f/94/11/0f94114633e8257fca8c730cc3a72c7a.jpg",
       "https://avatars.mds.yandex.net/get-shedevrum/15236108/img_43932ae3297a11f09593aa6a96a2c431/orig",
@@ -492,22 +492,22 @@
   {
     "id": 20,
     "name": "Елена",
-    "city": "Ижевск",
+    "location": "Ижевск",
     "likes": 21,
     "isLiked": false,
     "age": 26,
     "createdAt": "2025-11-05T14:15:00.000Z",
     "description": "Актерское мастерство для меня - это ключ к раскрытию личности. Люблю, когда люди находят свой голос!",
-    "img": "https://img.freepik.com/free-photo/redhead-young-female-winking-looking-camera_23-2148183402.jpg?t=st=1764351316~exp=1764354916~hmac=28a2fe37ee0646f8114f7fbce8b0c351a036b113c58ccc1bcba3278cd94f3fee&w=1060",
-    "teach": ["Актёрское мастерство"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/redhead-young-female-winking-looking-camera_23-2148183402.jpg?t=st=1764351316~exp=1764354916~hmac=28a2fe37ee0646f8114f7fbce8b0c351a036b113c58ccc1bcba3278cd94f3fee&w=1060",
+    "skillCanTeach": ["Актёрское мастерство"],
+    "subcategoriesWantToLearn": [
       "Испанский",
       "Домашние финансы",
       "Личностное развитие",
       "Йога и медитация"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site752179/dcaa2452-306d-4628-b50f-82289bc96355/dcaa2452-306d-4628-b50f-82289bc96355-5236384.jpeg",
       "https://uzmansertifika.com.tr/wp-content/uploads/cocuklarda-tiyatro-terapi-semineri-sertifika-programi-768x768.jpg",
       "https://leto.kulturazao.ru/upload/images/news/2025/2025-05-12-14-47-22.jpg",
@@ -519,22 +519,22 @@
   {
     "id": 21,
     "name": "Артем",
-    "city": "Барнаул",
+    "location": "Барнаул",
     "likes": 12,
     "isLiked": false,
     "age": 24,
     "createdAt": "2025-10-20T12:50:00.000Z",
     "description": "Скорочтение для меня - это суперсила в современном мире информации. Люблю, когда книги 'проглатываются' за часы!",
-    "img": "https://img.freepik.com/free-photo/selfie-portrait-videocall_23-2149186127.jpg?t=st=1764350098~exp=1764353698~hmac=a1521de8baab1514f8c08456554d171ed87bf759caa311248a4e0c32befaa58f&w=1060",
-    "teach": ["Скорочтение"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/selfie-portrait-videocall_23-2149186127.jpg?t=st=1764350098~exp=1764353698~hmac=a1521de8baab1514f8c08456554d171ed87bf759caa311248a4e0c32befaa58f&w=1060",
+    "skillCanTeach": ["Скорочтение"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Фотография",
       "Предпринимательство",
       "Физические тренировки"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659d5d53aa8dfa366d5efca2_659d5e719c148f78a1586f1e/scale_1200",
       "https://i.pinimg.com/736x/ef/29/9a/ef299a275f6aa390d658710232d493d8.jpg",
       "https://i.pinimg.com/736x/a5/7a/c2/a57ac23282da4f1bab6b5a8a8ed2a6ce.jpg",
@@ -546,22 +546,22 @@
   {
     "id": 22,
     "name": "Оксана",
-    "city": "Ульяновск",
+    "location": "Ульяновск",
     "likes": 9,
     "isLiked": false,
     "age": 27,
     "createdAt": "2025-11-28T08:20:00.000Z",
     "description": "DIY для меня - это магия превращения простых вещей в уникальные. Люблю давать вторую жизнь старым предметам!",
-    "img": "https://img.freepik.com/free-photo/portrait-young-woman-stretching-home-mat_23-2148896448.jpg?t=st=1764351230~exp=1764354830~hmac=c75979c3d619266d6808fe43def7ff09e09f6a43fa8428a89b9e4d5c0d26cda1&w=1060",
-    "teach": ["Декор и DIY"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/portrait-young-woman-stretching-home-mat_23-2148896448.jpg?t=st=1764351230~exp=1764354830~hmac=c75979c3d619266d6808fe43def7ff09e09f6a43fa8428a89b9e4d5c0d26cda1&w=1060",
+    "skillCanTeach": ["Декор и DIY"],
+    "subcategoriesWantToLearn": [
       "Французский",
       "Уборка и организация",
       "Коучинг",
       "Ментальное здоровье"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://image.cdn2.seaart.me/2024-02-20/cnadq8le878c73d9mjeg/50e9d15c61f3d620bb3c10687bf3eded50dc2954_high.webp",
       "https://i.pinimg.com/736x/0f/94/11/0f94114633e8257fca8c730cc3a72c7a.jpg",
       "https://avatars.mds.yandex.net/get-shedevrum/15236108/img_43932ae3297a11f09593aa6a96a2c431/orig",
@@ -573,22 +573,22 @@
   {
     "id": 23,
     "name": "Роман",
-    "city": "Иркутск",
+    "location": "Иркутск",
     "likes": 15,
     "isLiked": false,
     "age": 32,
     "createdAt": "2025-10-10T16:35:00.000Z",
     "description": "Ментальное здоровье для меня - это фундамент счастливой жизни. Люблю, когда люди обретают внутренний покой.",
-    "img": "https://img.freepik.com/free-photo/close-up-sad-man_23-2150896109.jpg?t=st=1764350141~exp=1764353741~hmac=8e7d8211590baa193e555c6ebab3a31878e1fa4306655066707db26cfd3e2bbb&w=1060",
-    "teach": ["Ментальное здоровье"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/close-up-sad-man_23-2150896109.jpg?t=st=1764350141~exp=1764353741~hmac=8e7d8211590baa193e555c6ebab3a31878e1fa4306655066707db26cfd3e2bbb&w=1060",
+    "skillCanTeach": ["Ментальное здоровье"],
+    "subcategoriesWantToLearn": [
       "Китайский",
       "Видеомонтаж",
       "Продажи и переговоры",
       "Домашние растения"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659d5d53aa8dfa366d5efca2_659d5e719c148f78a1586f1e/scale_1200",
       "https://i.pinimg.com/736x/ef/29/9a/ef299a275f6aa390d658710232d493d8.jpg",
       "https://i.pinimg.com/736x/a5/7a/c2/a57ac23282da4f1bab6b5a8a8ed2a6ce.jpg",
@@ -600,22 +600,22 @@
   {
     "id": 24,
     "name": "Людмила",
-    "city": "Хабаровск",
+    "location": "Хабаровск",
     "likes": 18,
     "isLiked": false,
     "age": 28,
     "createdAt": "2025-11-12T10:10:00.000Z",
     "description": "Испанский для меня - это страсть и огонь. ¡Me encanta cómo suena este idioma apasionado!",
-    "img": "https://img.freepik.com/free-photo/sideways-woman-posing-green-house_23-2148261255.jpg?t=st=1764351192~exp=1764354792~hmac=8271b9aa8ff279947e09d95a33b847dadd333967cf11dc997c986c9875f16cf8&w=1060",
-    "teach": ["Испанский"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/sideways-woman-posing-green-house_23-2148261255.jpg?t=st=1764351192~exp=1764354792~hmac=8271b9aa8ff279947e09d95a33b847dadd333967cf11dc997c986c9875f16cf8&w=1060",
+    "skillCanTeach": ["Испанский"],
+    "subcategoriesWantToLearn": [
       "Рисование и иллюстрация",
       "Резюме и собеседование",
       "Питание и ЗОЖ",
       "Арт-терапия"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://static.tildacdn.one/tild3032-3461-4165-b661-656464323064/yabanci.jpeg",
       "https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/90/85/4f/90854f21-d484-1041-eda7-6c24810338bf/mza_16670632695750822409.jpg/1200x1200bb.jpg",
       "https://sneg.top/uploads/posts/2023-04/1681977836_sneg-top-p-inostrannie-yaziki-kartinki-dlya-prezentat-49.jpg",
@@ -627,22 +627,22 @@
   {
     "id": 25,
     "name": "Виктор",
-    "city": "Ярославль",
+    "location": "Ярославль",
     "likes": 11,
     "isLiked": false,
     "age": 22,
     "createdAt": "2025-09-26T19:05:00.000Z",
     "description": "Фитнес для меня - это диалог с телом. Люблю момент, когда мышцы 'поют' после хорошей тренировки!",
-    "img": "https://img.freepik.com/free-photo/young-successful-businessman-thinking-posing-beige-wall_176420-145.jpg?t=st=1764350182~exp=1764353782~hmac=fb1dac1cfdb23741a2daf188d3af94aeaf846f21ad568535438dcd2de5bf2991&w=1060",
-    "teach": ["Физические тренировки"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/young-successful-businessman-thinking-posing-beige-wall_176420-145.jpg?t=st=1764350182~exp=1764353782~hmac=fb1dac1cfdb23741a2daf188d3af94aeaf846f21ad568535438dcd2de5bf2991&w=1060",
+    "skillCanTeach": ["Физические тренировки"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Управление командой",
       "Креативное письмо",
       "Ремонт"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/originals/c0/60/21/c060215015e6d46a234cb4127af3237f.jpg",
       "https://i.pinimg.com/originals/4d/db/13/4ddb136fa723f55ce3b7bcb20f8f0f42.jpg",
       "https://www.nutritionbliss.com/wp-content/uploads/2020/01/iStock-876656828-e1580342485220.jpg",
@@ -654,17 +654,17 @@
   {
     "id": 26,
     "name": "Алиса",
-    "city": "Владивосток",
+    "location": "Владивосток",
     "likes": 23,
     "isLiked": false,
     "age": 25,
     "createdAt": "2025-10-30T13:45:00.000Z",
     "description": "Коучинг для меня - это искусство задавать правильные вопросы. Люблю, когда люди находят свои ответы!",
-    "img": "https://img.freepik.com/free-photo/beautiful-young-woman-portrait-black-background_158595-1652.jpg?t=st=1764351137~exp=1764354737~hmac=114d0e70c4af6da63c3eb2e233b3d760d488fe3875f910c545905344388d6c82&w=1060",
-    "teach": ["Коучинг"],
-    "learn": ["Немецкий", "Музыка и звук", "Декор и DIY", "Осознанность"],
+    "avatarUrl": "https://img.freepik.com/free-photo/beautiful-young-woman-portrait-black-background_158595-1652.jpg?t=st=1764351137~exp=1764354737~hmac=114d0e70c4af6da63c3eb2e233b3d760d488fe3875f910c545905344388d6c82&w=1060",
+    "skillCanTeach": ["Коучинг"],
+    "subcategoriesWantToLearn": ["Немецкий", "Музыка и звук", "Декор и DIY", "Осознанность"],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://www.cgd13.fr/media/miniatures/formation_.png",
       "https://static.tildacdn.com/tild6461-6435-4630-b362-306439383266/1HhnXn9XR6EFDwE04Tom.jpg",
       "https://opositocorreos.com/wp-content/uploads/2020/05/equipo-docente.jpg",
@@ -676,17 +676,17 @@
   {
     "id": 27,
     "name": "Георгий",
-    "city": "Махачкала",
+    "location": "Махачкала",
     "likes": 7,
     "isLiked": false,
     "age": 33,
     "createdAt": "2025-11-20T17:30:00.000Z",
     "description": "Управление командой для меня - это дирижирование оркестром талантов. Люблю, когда команда синергетит!",
-    "img": "https://img.freepik.com/free-photo/man-therapy-holding-coffee-cup_23-2148913050.jpg?t=st=1764350219~exp=1764353819~hmac=11e2a649048304dcf02c03e8185416ab5d1eb9337a12ca00eb47073f78bf4353&w=1060",
-    "teach": ["Управление командой"],
-    "learn": ["Японский", "Фотография", "Домашние финансы", "Йога и медитация"],
+    "avatarUrl": "https://img.freepik.com/free-photo/man-therapy-holding-coffee-cup_23-2148913050.jpg?t=st=1764350219~exp=1764353819~hmac=11e2a649048304dcf02c03e8185416ab5d1eb9337a12ca00eb47073f78bf4353&w=1060",
+    "skillCanTeach": ["Управление командой"],
+    "subcategoriesWantToLearn": ["Японский", "Фотография", "Домашние финансы", "Йога и медитация"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
@@ -698,22 +698,22 @@
   {
     "id": 28,
     "name": "Валерия",
-    "city": "Томск",
+    "location": "Томск",
     "likes": 14,
     "isLiked": false,
     "age": 26,
     "createdAt": "2025-10-07T11:15:00.000Z",
     "description": "Когнитивные техники для меня - это гимнастика для ума. Люблю, когда мозг 'щелкает' сложные задачи!",
-    "img": "https://img.freepik.com/free-photo/beautiful-smiling-tourist-woman-having-fun-amusement-park-hot-summer-day-trip_346278-454.jpg?t=st=1764351106~exp=1764354706~hmac=3132d0153ba669c7577a84a40809b6ce3fe8739e7ccc2ac5539c39f0c0b257eb&w=1060",
-    "teach": ["Когнитивные техники"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/beautiful-smiling-tourist-woman-having-fun-amusement-park-hot-summer-day-trip_346278-454.jpg?t=st=1764351106~exp=1764354706~hmac=3132d0153ba669c7577a84a40809b6ce3fe8739e7ccc2ac5539c39f0c0b257eb&w=1060",
+    "skillCanTeach": ["Когнитивные техники"],
+    "subcategoriesWantToLearn": [
       "Французский",
       "Актёрское мастерство",
       "Предпринимательство",
       "Питание и ЗОЖ"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659d5d53aa8dfa366d5efca2_659d5e719c148f78a1586f1e/scale_1200",
       "https://i.pinimg.com/736x/ef/29/9a/ef299a275f6aa390d658710232d493d8.jpg",
       "https://i.pinimg.com/736x/a5/7a/c2/a57ac23282da4f1bab6b5a8a8ed2a6ce.jpg",
@@ -725,22 +725,22 @@
   {
     "id": 29,
     "name": "Константин",
-    "city": "Оренбург",
+    "location": "Оренбург",
     "likes": 16,
     "isLiked": false,
     "age": 30,
     "createdAt": "2025-11-24T09:50:00.000Z",
     "description": "Японский для меня - это путь самурая. Люблю красоту иероглифов и глубину японской культуры!",
-    "img": "https://img.freepik.com/free-photo/medium-shot-man-with-delicious-pina-colada_23-2150184025.jpg?t=st=1764350274~exp=1764353874~hmac=e5fda90e2aad095a5a45dc40e231dd0365d8471b120b0b4748fc3747227155ea&w=1060",
-    "teach": ["Японский"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/medium-shot-man-with-delicious-pina-colada_23-2150184025.jpg?t=st=1764350274~exp=1764353874~hmac=e5fda90e2aad095a5a45dc40e231dd0365d8471b120b0b4748fc3747227155ea&w=1060",
+    "skillCanTeach": ["Японский"],
+    "subcategoriesWantToLearn": [
       "Маркетинг и реклама",
       "Видеомонтаж",
       "Личный бренд",
       "Баланс жизни и работы"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://static.tildacdn.one/tild3032-3461-4165-b661-656464323064/yabanci.jpeg",
       "https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/90/85/4f/90854f21-d484-1041-eda7-6c24810338bf/mza_16670632695750822409.jpg/1200x1200bb.jpg",
       "https://sneg.top/uploads/posts/2023-04/1681977836_sneg-top-p-inostrannie-yaziki-kartinki-dlya-prezentat-49.jpg",
@@ -752,22 +752,22 @@
   {
     "id": 30,
     "name": "Вероника",
-    "city": "Кемерово",
+    "location": "Кемерово",
     "likes": 10,
     "isLiked": false,
     "age": 24,
     "createdAt": "2025-10-22T15:40:00.000Z",
     "description": "Баланс жизни для меня - это искусство жонглирования приоритетами. Люблю, когда все сферы жизни в гармонии!",
-    "img": "https://img.freepik.com/free-photo/elegant-young-woman-hat-eyeglasses_23-2148068353.jpg?t=st=1764351072~exp=1764354672~hmac=0475e2f9d8af310d667389594ccaace64d34cd543c73f94db991365e9d91842b&w=1060",
-    "teach": ["Баланс жизни и работы"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/elegant-young-woman-hat-eyeglasses_23-2148068353.jpg?t=st=1764351072~exp=1764354672~hmac=0475e2f9d8af310d667389594ccaace64d34cd543c73f94db991365e9d91842b&w=1060",
+    "skillCanTeach": ["Баланс жизни и работы"],
+    "subcategoriesWantToLearn": [
       "Испанский",
       "Рисование и иллюстрация",
       "Тайм-менеджмент",
       "Ментальное здоровье"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://cdn.xl.pt/notasemdia/uploads/2017/06/Dicas-para-rentabilizar-o-seu-tempo-768x768.jpg",
       "https://avatars.mds.yandex.net/i?id=0b9de3ee0de2d1c4d82cef5ba9d9dc62_l-6356719-images-thumbs&n=13",
       "https://static.vecteezy.com/system/resources/previews/016/177/688/large_2x/timetable-planning-illustration-concept-character-managing-work-tasks-time-management-and-organization-concept-deadline-using-calendar-illustration-vector.jpg",
@@ -779,22 +779,22 @@
   {
     "id": 31,
     "name": "Станислав",
-    "city": "Уфа",
+    "location": "Уфа",
     "likes": 13,
     "isLiked": false,
     "age": 29,
     "createdAt": "2025-11-10T12:25:00.000Z",
     "description": "Преподавание для меня - это зажигание искры в глазах учеников. Люблю моменты 'эврики'!",
-    "img": "https://img.freepik.com/free-photo/front-view-man-with-dog-jetty_23-2150558036.jpg?t=st=1764350301~exp=1764353901~hmac=d102c6e489931b925df6cf5c67c2cfc28a3f29a3e9fee58e9ec84b5f3759e5a5&w=1060",
-    "teach": ["Навыки преподавания"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/front-view-man-with-dog-jetty_23-2150558036.jpg?t=st=1764350301~exp=1764353901~hmac=d102c6e489931b925df6cf5c67c2cfc28a3f29a3e9fee58e9ec84b5f3759e5a5&w=1060",
+    "skillCanTeach": ["Навыки преподавания"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Продажи и переговоры",
       "Домашние растения",
       "Физические тренировки"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://www.cgd13.fr/media/miniatures/formation_.png",
       "https://static.tildacdn.com/tild6461-6435-4630-b362-306439383266/1HhnXn9XR6EFDwE04Tom.jpg",
       "https://opositocorreos.com/wp-content/uploads/2020/05/equipo-docente.jpg",
@@ -806,22 +806,22 @@
   {
     "id": 32,
     "name": "Анастасия",
-    "city": "Красноярск",
+    "location": "Красноярск",
     "likes": 19,
     "isLiked": false,
     "age": 27,
     "createdAt": "2025-09-24T16:55:00.000Z",
     "description": "Кулинария для меня - это алхимия вкусов. Люблю, когда простые ингредиенты превращаются в кулинарный шедевр!",
-    "img": "https://img.freepik.com/free-photo/woman-takes-off-headphones-speak-with-friend-walks-outdoors-has-fitness-training-burned-calories-after-eating-high-calories-food-looks-satisfied-after-exercising-wellbeing-sport_273609-54124.jpg?t=st=1764351028~exp=1764354628~hmac=579124493d051eca83ad5af35cc969b48d920f764e7631d0de3628c9af4610bf&w=1060",
-    "teach": ["Приготовление еды"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/woman-takes-off-headphones-speak-with-friend-walks-outdoors-has-fitness-training-burned-calories-after-eating-high-calories-food-looks-satisfied-after-exercising-wellbeing-sport_273609-54124.jpg?t=st=1764351028~exp=1764354628~hmac=579124493d051eca83ad5af35cc969b48d920f764e7631d0de3628c9af4610bf&w=1060",
+    "skillCanTeach": ["Приготовление еды"],
+    "subcategoriesWantToLearn": [
       "Китайский",
       "Креативное письмо",
       "Коучинг",
       "Сон и восстановление"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://www.nutritionbliss.com/wp-content/uploads/2020/01/iStock-876656828-e1580342485220.jpg",
       "https://ocmp.zdrav76.ru/wp-content/uploads/2024/12/Псих-здоров-и-активностьНа-сайт.jpg",
       "https://img.freepik.com/premium-vector/diet-plan-slim-woman-doing-exercise-planning-diet-with-fruit-vegetable-girl-doing-yoga-dietary-eating-meal-planning-nutrition-consultation-healthy-food-sport-health-lifestyle-fitness_458444-702.jpg?semt=ais_hybrid&w=740",
@@ -833,17 +833,17 @@
   {
     "id": 33,
     "name": "Вадим",
-    "city": "Пермь",
+    "location": "Пермь",
     "likes": 8,
     "isLiked": false,
     "age": 26,
     "createdAt": "2025-11-14T14:05:00.000Z",
     "description": "Китайский для меня - это головоломка, где каждый иероглиф рассказывает свою историю. 很有意思!",
-    "img": "https://img.freepik.com/free-photo/portrait-young-stylish-man-model-sitting-leg-leg-thoughtful_158595-2949.jpg?t=st=1764350375~exp=1764353975~hmac=fa917813986ac5e360afd8dd65db1a9f9240b42e1fd8a5b1e3fcb4f78e441be2&w=1060",
-    "teach": ["Китайский"],
-    "learn": ["Управление командой", "Фотография", "Осознанность", "Ремонт"],
+    "avatarUrl": "https://img.freepik.com/free-photo/portrait-young-stylish-man-model-sitting-leg-leg-thoughtful_158595-2949.jpg?t=st=1764350375~exp=1764353975~hmac=fa917813986ac5e360afd8dd65db1a9f9240b42e1fd8a5b1e3fcb4f78e441be2&w=1060",
+    "skillCanTeach": ["Китайский"],
+    "subcategoriesWantToLearn": ["Управление командой", "Фотография", "Осознанность", "Ремонт"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://static.tildacdn.one/tild3032-3461-4165-b661-656464323064/yabanci.jpeg",
       "https://is4-ssl.mzstatic.com/image/thumb/Podcasts126/v4/90/85/4f/90854f21-d484-1041-eda7-6c24810338bf/mza_16670632695750822409.jpg/1200x1200bb.jpg",
       "https://sneg.top/uploads/posts/2023-04/1681977836_sneg-top-p-inostrannie-yaziki-kartinki-dlya-prezentat-49.jpg",
@@ -855,22 +855,22 @@
   {
     "id": 34,
     "name": "Ксения",
-    "city": "Воронеж",
+    "location": "Воронеж",
     "likes": 22,
     "isLiked": false,
     "age": 25,
     "createdAt": "2025-10-17T10:50:00.000Z",
     "description": "Фотография для меня - это замороженное мгновение. Люблю ловить эмоции в объектив камеры!",
-    "img": "https://img.freepik.com/free-photo/waiting-beauty-background-lonely-lady_1303-566.jpg?t=st=1764350997~exp=1764354597~hmac=ace1f322e5246db5a553d821306e828e944f3df0aa31e96e00465d80f8d5140b&w=1060",
-    "teach": ["Фотография"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/waiting-beauty-background-lonely-lady_1303-566.jpg?t=st=1764350997~exp=1764354597~hmac=ace1f322e5246db5a553d821306e828e944f3df0aa31e96e00465d80f8d5140b&w=1060",
+    "skillCanTeach": ["Фотография"],
+    "subcategoriesWantToLearn": [
       "Французский",
       "Декор и DIY",
       "Личностное развитие",
       "Йога и медитация"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://i.pinimg.com/originals/15/c0/fb/15c0fb976ca1dbb3540864b79ab50670.png",
       "https://yt3.googleusercontent.com/0gjXJ4oiUJnR1GMDiXDxdNdvjT89wO2oYJHpde0bBAu7QQ-nzyHIAJsO1-Ybwhe2_tVLTaZ5VA=s900-c-k-c0x00ffffff-no-rj",
       "https://i.pinimg.com/736x/77/b0/4c/77b04cd32dfe88482dfa5630991cf2f8.jpg",
@@ -882,17 +882,17 @@
   {
     "id": 35,
     "name": "Григорий",
-    "city": "Волгоград",
+    "location": "Волгоград",
     "likes": 11,
     "isLiked": false,
     "age": 32,
     "createdAt": "2025-11-27T13:20:00.000Z",
     "description": "Личный бренд для меня - это аутентичность. Люблю, когда человек находит свой уникальный голос в digital!",
-    "img": "https://img.freepik.com/free-photo/portrait-male-model-wearing-reading-glasses_23-2148760664.jpg?t=st=1764350421~exp=1764354021~hmac=deb497b9f559f882e65b70f731091f5c0424f6782866be7cddc706c457fb76f3&w=1060",
-    "teach": ["Личный бренд"],
-    "learn": ["Японский", "Музыка и звук", "Домашние финансы", "Питание и ЗОЖ"],
+    "avatarUrl": "https://img.freepik.com/free-photo/portrait-male-model-wearing-reading-glasses_23-2148760664.jpg?t=st=1764350421~exp=1764354021~hmac=deb497b9f559f882e65b70f731091f5c0424f6782866be7cddc706c457fb76f3&w=1060",
+    "skillCanTeach": ["Личный бренд"],
+    "subcategoriesWantToLearn": ["Японский", "Музыка и звук", "Домашние финансы", "Питание и ЗОЖ"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
@@ -904,22 +904,22 @@
   {
     "id": 36,
     "name": "Маргарита",
-    "city": "Краснодар",
+    "location": "Краснодар",
     "likes": 17,
     "isLiked": false,
     "age": 28,
     "createdAt": "2025-10-04T18:40:00.000Z",
     "description": "Уборка для меня - это терапевтический ритуал. Люблю, когда после наведения порядка проясняются и мысли!",
-    "img": "https://img.freepik.com/free-photo/young-beautiful-girl-uses-smartphone-street-surfing-internet-listening-music_1296-910.jpg?t=st=1764350961~exp=1764354561~hmac=878cedce169e8d4da54a452d5be968e2304cb37ecfcbdf44e5d868f6234b5d08&w=1060",
-    "teach": ["Уборка и организация"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/young-beautiful-girl-uses-smartphone-street-surfing-internet-listening-music_1296-910.jpg?t=st=1764350961~exp=1764354561~hmac=878cedce169e8d4da54a452d5be968e2304cb37ecfcbdf44e5d868f6234b5d08&w=1060",
+    "skillCanTeach": ["Уборка и организация"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Актёрское мастерство",
       "Предпринимательство",
       "Ментальное здоровье"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://image.cdn2.seaart.me/2024-02-20/cnadq8le878c73d9mjeg/50e9d15c61f3d620bb3c10687bf3eded50dc2954_high.webp",
       "https://i.pinimg.com/736x/0f/94/11/0f94114633e8257fca8c730cc3a72c7a.jpg",
       "https://avatars.mds.yandex.net/get-shedevrum/15236108/img_43932ae3297a11f09593aa6a96a2c431/orig",
@@ -931,17 +931,17 @@
   {
     "id": 37,
     "name": "Федор",
-    "city": "Саратов",
+    "location": "Саратов",
     "likes": 9,
     "isLiked": false,
     "age": 30,
     "createdAt": "2025-11-19T15:35:00.000Z",
     "description": "Управление проектами для меня - это пазл ресурсов и сроков. Люблю, когда все части складываются в идеальную картину!",
-    "img": "https://img.freepik.com/free-photo/portrait-handsome-man-sitting-sofa_329181-2737.jpg?t=st=1764350466~exp=1764354066~hmac=16dd05b9f9612abeb30d6f47de690a763958fa1b738d07faa5d9aefa621f6ec9&w=1060",
-    "teach": ["Проектное управление"],
-    "learn": ["Немецкий", "Видеомонтаж", "Коучинг", "Баланс жизни и работы"],
+    "avatarUrl": "https://img.freepik.com/free-photo/portrait-handsome-man-sitting-sofa_329181-2737.jpg?t=st=1764350466~exp=1764354066~hmac=16dd05b9f9612abeb30d6f47de690a763958fa1b738d07faa5d9aefa621f6ec9&w=1060",
+    "skillCanTeach": ["Проектное управление"],
+    "subcategoriesWantToLearn": ["Немецкий", "Видеомонтаж", "Коучинг", "Баланс жизни и работы"],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
@@ -953,22 +953,22 @@
   {
     "id": 38,
     "name": "Диана",
-    "city": "Тюмень",
+    "location": "Тюмень",
     "likes": 20,
     "isLiked": false,
     "age": 24,
     "createdAt": "2025-10-13T12:10:00.000Z",
     "description": "Ментальное здоровье для меня - это сад, который нужно регулярно поливать. Люблю видеть, как расцветают люди!",
-    "img": "https://img.freepik.com/free-photo/side-view-woman-posing-chair_23-2149915943.jpg?t=st=1764350909~exp=1764354509~hmac=74e240ee053916adad3543b9b195c3774b24bbf094318a0f5b42093a642a4a9d&w=1060",
-    "teach": ["Ментальное здоровье"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/side-view-woman-posing-chair_23-2149915943.jpg?t=st=1764350909~exp=1764354509~hmac=74e240ee053916adad3543b9b195c3774b24bbf094318a0f5b42093a642a4a9d&w=1060",
+    "skillCanTeach": ["Ментальное здоровье"],
+    "subcategoriesWantToLearn": [
       "Испанский",
       "Рисование и иллюстрация",
       "Тайм-менеджмент",
       "Домашние растения"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659d5d53aa8dfa366d5efca2_659d5e719c148f78a1586f1e/scale_1200",
       "https://i.pinimg.com/736x/ef/29/9a/ef299a275f6aa390d658710232d493d8.jpg",
       "https://i.pinimg.com/736x/a5/7a/c2/a57ac23282da4f1bab6b5a8a8ed2a6ce.jpg",
@@ -980,22 +980,22 @@
   {
     "id": 39,
     "name": "Борис",
-    "city": "Тольятти",
+    "location": "Тольятти",
     "likes": 12,
     "isLiked": false,
     "age": 27,
     "createdAt": "2025-11-29T16:45:00.000Z",
     "description": "Продажи для меня - это психологический танец. Люблю момент, когда клиент говорит 'да' и мы оба в выигрыше!",
-    "img": "https://img.freepik.com/free-photo/stylish-young-handsome-man-classy-outfit_1303-22501.jpg?t=st=1764350527~exp=1764354127~hmac=64dd08c665ebe34cdc56146461420b69fd0578f89a37a886dfd5ce9cfa93ccf5&w=1060",
-    "teach": ["Продажи и переговоры"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/stylish-young-handsome-man-classy-outfit_1303-22501.jpg?t=st=1764350527~exp=1764354127~hmac=64dd08c665ebe34cdc56146461420b69fd0578f89a37a886dfd5ce9cfa93ccf5&w=1060",
+    "skillCanTeach": ["Продажи и переговоры"],
+    "subcategoriesWantToLearn": [
       "Китайский",
       "Фотография",
       "Личностное развитие",
       "Физические тренировки"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
@@ -1007,22 +1007,22 @@
   {
     "id": 40,
     "name": "Зоя",
-    "city": "Ижевск",
+    "location": "Ижевск",
     "likes": 15,
     "isLiked": false,
     "age": 23,
     "createdAt": "2025-10-26T11:30:00.000Z",
     "description": "Скорочтение для меня - это суперспособность в мире информации. Люблю 'проглатывать' книги за один присест!",
-    "img": "https://img.freepik.com/free-photo/elegant-businesswoman-standing-office_1157-33427.jpg?t=st=1764350845~exp=1764354445~hmac=af5f6b7e006dfdb09652ec6b1d46ac8511bfe91f6474cf76f979132e7ebd6841&w=1060",
-    "teach": ["Скорочтение"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/elegant-businesswoman-standing-office_1157-33427.jpg?t=st=1764350845~exp=1764354445~hmac=af5f6b7e006dfdb09652ec6b1d46ac8511bfe91f6474cf76f979132e7ebd6841&w=1060",
+    "skillCanTeach": ["Скорочтение"],
+    "subcategoriesWantToLearn": [
       "Французский",
       "Креативное письмо",
       "Управление командой",
       "Осознанность"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659d5d53aa8dfa366d5efca2_659d5e719c148f78a1586f1e/scale_1200",
       "https://i.pinimg.com/736x/ef/29/9a/ef299a275f6aa390d658710232d493d8.jpg",
       "https://i.pinimg.com/736x/a5/7a/c2/a57ac23282da4f1bab6b5a8a8ed2a6ce.jpg",
@@ -1034,22 +1034,22 @@
   {
     "id": 41,
     "name": "Семен",
-    "city": "Барнаул",
+    "location": "Барнаул",
     "likes": 10,
     "isLiked": false,
     "age": 31,
     "createdAt": "2025-11-06T14:55:00.000Z",
     "description": "Ремонт для меня - это магия превращения. Люблю, когда из старого хаоса рождается новая красота!",
-    "img": "https://img.freepik.com/free-photo/close-up-male-carpenter-looking-digital-tablet-measuring-wooden-block_23-2147945073.jpg?t=st=1764350577~exp=1764354177~hmac=4f032f41355338af3c3d922b9dec9ce816b70678f3a0a2512868a2013ffe0f36&w=1060",
-    "teach": ["Ремонт"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/close-up-male-carpenter-looking-digital-tablet-measuring-wooden-block_23-2147945073.jpg?t=st=1764350577~exp=1764354177~hmac=4f032f41355338af3c3d922b9dec9ce816b70678f3a0a2512868a2013ffe0f36&w=1060",
+    "skillCanTeach": ["Ремонт"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Маркетинг и реклама",
       "Арт-терапия",
       "Сон и восстановление"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://image.cdn2.seaart.me/2024-02-20/cnadq8le878c73d9mjeg/50e9d15c61f3d620bb3c10687bf3eded50dc2954_high.webp",
       "https://i.pinimg.com/736x/0f/94/11/0f94114633e8257fca8c730cc3a72c7a.jpg",
       "https://avatars.mds.yandex.net/get-shedevrum/15236108/img_43932ae3297a11f09593aa6a96a2c431/orig",
@@ -1061,17 +1061,17 @@
   {
     "id": 42,
     "name": "Эльвира",
-    "city": "Ульяновск",
+    "location": "Ульяновск",
     "likes": 18,
     "isLiked": false,
     "age": 26,
     "createdAt": "2025-10-01T09:25:00.000Z",
     "description": "Письмо для меня - это полет мысли на бумаге. Люблю, когда слова складываются в захватывающие истории!",
-    "img": "https://img.freepik.com/free-photo/cute-young-woman-casual-wear-outdoor_624325-1123.jpg?t=st=1764350800~exp=1764354400~hmac=4b1e158a167a9d1172d2c4aa10945a32f82ccd804b92be8513a6bfae4de1fc83&w=1060",
-    "teach": ["Креативное письмо"],
-    "learn": ["Немецкий", "Декор и DIY", "Коучинг", "Питание и ЗОЖ"],
+    "avatarUrl": "https://img.freepik.com/free-photo/cute-young-woman-casual-wear-outdoor_624325-1123.jpg?t=st=1764350800~exp=1764354400~hmac=4b1e158a167a9d1172d2c4aa10945a32f82ccd804b92be8513a6bfae4de1fc83&w=1060",
+    "skillCanTeach": ["Креативное письмо"],
+    "subcategoriesWantToLearn": ["Немецкий", "Декор и DIY", "Коучинг", "Питание и ЗОЖ"],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659d5d53aa8dfa366d5efca2_659d5e719c148f78a1586f1e/scale_1200",
       "https://i.pinimg.com/736x/ef/29/9a/ef299a275f6aa390d658710232d493d8.jpg",
       "https://i.pinimg.com/736x/a5/7a/c2/a57ac23282da4f1bab6b5a8a8ed2a6ce.jpg",
@@ -1083,22 +1083,22 @@
   {
     "id": 43,
     "name": "Тимофей",
-    "city": "Иркутск",
+    "location": "Иркутск",
     "likes": 7,
     "isLiked": false,
     "age": 29,
     "createdAt": "2025-11-23T17:15:00.000Z",
     "description": "Финансы для меня - это пазл, где каждая деталь важна. Люблю, когда цифры складываются в красивую картину!",
-    "img": "https://img.freepik.com/free-photo/smiling-young-african-man-wearing-hat_171337-15958.jpg?t=st=1764350639~exp=1764354239~hmac=dcf3fe402f63eba7b27887ae98920d02e830dfc7b6c1b9f44ab8dcb4fff11601&w=1060",
-    "teach": ["Домашние финансы"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/smiling-young-african-man-wearing-hat_171337-15958.jpg?t=st=1764350639~exp=1764354239~hmac=dcf3fe402f63eba7b27887ae98920d02e830dfc7b6c1b9f44ab8dcb4fff11601&w=1060",
+    "skillCanTeach": ["Домашние финансы"],
+    "subcategoriesWantToLearn": [
       "Японский",
       "Видеомонтаж",
       "Предпринимательство",
       "Йога и медитация"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://m.foolcdn.com/media/affiliates/images/Couple_paying_bills-1_tEyxqjE.2e16d0ba.fill-1080x1080.jpg",
       "https://sun9-45.userapi.com/impg/t30-v7tlugixjIVCCJN1W-qkfxYDTAllNhg9DA/SDPtbHlvD38.jpg?size=807x807&quality=96&sign=25a3cf298ebf520a0d1213e71850053b&c_uniq_tag=MTIVchtMq0JjkL1atREDtojYCaj_DGvuS_AikRDnopM&type=album",
       "https://avatars.mds.yandex.net/i?id=24efbd92b2f32a429eb9ab88d689160b_l-4793215-images-thumbs&n=13",
@@ -1110,22 +1110,22 @@
   {
     "id": 44,
     "name": "Лилия",
-    "city": "Хабаровск",
+    "location": "Хабаровск",
     "likes": 21,
     "isLiked": false,
     "age": 25,
     "createdAt": "2025-10-19T13:40:00.000Z",
     "description": "Осознанность для меня - это якорь в бушующем море жизни. Люблю моменты полного присутствия 'здесь и сейчас'!",
-    "img": "https://img.freepik.com/free-photo/attractive-girl-window-shows-different-emotions-mood_78826-2793.jpg?t=st=1764350763~exp=1764354363~hmac=bbeafee19cff395c4ffe80da0b01282a43f1397143c675bcd026414a0b7bad71&w=1060",
-    "teach": ["Осознанность"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/attractive-girl-window-shows-different-emotions-mood_78826-2793.jpg?t=st=1764350763~exp=1764354363~hmac=bbeafee19cff395c4ffe80da0b01282a43f1397143c675bcd026414a0b7bad71&w=1060",
+    "skillCanTeach": ["Осознанность"],
+    "subcategoriesWantToLearn": [
       "Испанский",
       "Актёрское мастерство",
       "Личный бренд",
       "Ментальное здоровье"
     ],
     "gender": "female",
-    "skillsImage": [
+    "images": [
       "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_659d5d53aa8dfa366d5efca2_659d5e719c148f78a1586f1e/scale_1200",
       "https://i.pinimg.com/736x/ef/29/9a/ef299a275f6aa390d658710232d493d8.jpg",
       "https://i.pinimg.com/736x/a5/7a/c2/a57ac23282da4f1bab6b5a8a8ed2a6ce.jpg",
@@ -1137,22 +1137,22 @@
   {
     "id": 45,
     "name": "Ярослав",
-    "city": "Ярославль",
+    "location": "Ярославль",
     "likes": 14,
     "isLiked": false,
     "age": 33,
     "createdAt": "2025-11-16T10:05:00.000Z",
     "description": "Предпринимательство для меня - это искусство создавать value. Люблю, когда идея превращается в работающий бизнес!",
-    "img": "https://img.freepik.com/free-photo/asian-business-man-calling-phone-outside_1262-3452.jpg?t=st=1764350676~exp=1764354276~hmac=f3366f994993aa3fad416fb0bdbbfe27d5642cb3aa1e61b408b510ea10696371&w=1060",
-    "teach": ["Предпринимательство"],
-    "learn": [
+    "avatarUrl": "https://img.freepik.com/free-photo/asian-business-man-calling-phone-outside_1262-3452.jpg?t=st=1764350676~exp=1764354276~hmac=f3366f994993aa3fad416fb0bdbbfe27d5642cb3aa1e61b408b510ea10696371&w=1060",
+    "skillCanTeach": ["Предпринимательство"],
+    "subcategoriesWantToLearn": [
       "Английский",
       "Фотография",
       "Проектное управление",
       "Баланс жизни и работы"
     ],
     "gender": "male",
-    "skillsImage": [
+    "images": [
       "https://vhs-stuttgart.de/fileadmin/_processed_/c/8/csm_Beruf_copy_NDABCREATIVITY__AdobeStock_67b03f67c0.jpeg",
       "https://sun6-23.userapi.com/s/v1/if1/PWH2hrudcjYil3kIR6BSXuXiGtOB-fvgFl1uyftcBYrmaUZkCny703C1ki8QCiA9FKk84RD2.jpg?size=691x691&quality=96&crop=154,0,691,691&ava=1",
       "https://mittalblowers.com/wp-content/uploads/2025/03/career-1.webp",
