@@ -2,16 +2,13 @@
   /* font variables */
   --font-main: "Roboto", sans-serif;
   --font-accent: "Jost", sans-serif;
-
   --font-size-main: 16px;
   --font-size-caption: 12px;
   --font-size-h1: 32px;
   --font-size-h2: 24px;
   --font-size-h3: 20px;
-
   --font-weight: 400;
   --font-weight-accent: 500;
-
   --line-height-main: 24px;
   --line-height-caption: 16px;
   --line-height-h1: 40px;
@@ -26,7 +23,7 @@
   --button-disabled-color: #E4E8DF;
   --button-pressed-color: #508826;
   --button-hover-color: #DEEBC5;
-  --card-input-color: #FFF;
+  --card-input-color: #FFFFFF;
   --accent-color: #ABD27A;
   --alarm-color: #E0796E;
   --error-color: #BF3920;

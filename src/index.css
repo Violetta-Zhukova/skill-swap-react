@@ -1,11 +1,11 @@
-@import './app/styles/index.css';
+@import url("url('./app/styles/index.css')");
 
 body {
   margin: 0;
-  font-family: var(--font-main);
-  font-size: var(--font-size-main);
-  font-weight: var(--font-weight);
-  line-height: var(--line-height-main);
   color: var(--text-color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-main);
+  font-family: var(--font-main);
+  line-height: var(--line-height-main);
   background-color: var(--bg-color);
 }
