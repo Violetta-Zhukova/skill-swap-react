@@ -1,7 +1,8 @@
 import cities from "../../public/db/cities.json";
 import skills from "../../public/db/categories.json";
+import users from "../../public/db/users.json";
 
-import type { City, SkillCategory } from "../entities/types";
+import type { City, SkillCategory, User } from "../entities/types";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms)); //для иммитации реального запроса
 
@@ -14,5 +15,10 @@ export const api = {
   async getSkills(): Promise<SkillCategory[]> {
     await delay(300);
     return skills;
+  },
+
+  async getAllUsers(): Promise<User[]> {
+    await delay(300);
+    return users as User[];
   },
 };
