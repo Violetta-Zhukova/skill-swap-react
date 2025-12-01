@@ -40,6 +40,6 @@ export const Modal: FC<TModalProps> = ({
       text={text}
       buttonText={buttonText}
     />,
-    modalRoot as HTMLDivElement
+    modalRoot as HTMLDivElement,
   );
 };
