@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Modal } from "../shared/ui/modal";
-import testimage from "./../assets/img/icons/test-img/test-img.png";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +16,11 @@ function App() {
           onClose={() => {
             setIsOpen(false);
           }}
-          image={testimage}
-          title={"Ваше предложение создано"}
-          text={"Теперь вы можете предложить обмен"}
-          buttonText={"Готово"}
-        />
+        >
+          <h2>{"TEST"}</h2>
+          <p>{"Test text"}</p>
+          <button onClick={() => setIsOpen(false)}>{"Закрыть модалку"}</button>
+        </Modal>
       )}
     </div>
   );
