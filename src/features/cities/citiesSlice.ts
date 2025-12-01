@@ -16,7 +16,7 @@ const initialState: TCitiesState = {
   error: undefined,
 };
 
-const getCities = createAsyncThunk("cities/getCities", api.getCities);
+export const getCities = createAsyncThunk("cities/getCities", api.getCities);
 
 export const citiesSlice = createSlice({
   name: "cities",
