@@ -32,6 +32,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  padding: 0;
   color: var(--button-pressed-color);
   background-color: transparent;
   border: none;

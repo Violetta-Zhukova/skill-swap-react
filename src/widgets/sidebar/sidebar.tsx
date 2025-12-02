@@ -6,79 +6,57 @@ import {
 } from "../../shared/ui/checkbox-group";
 import type { CheckboxType } from "../../shared/ui/checkbox-group/checkbox/checkbox";
 import type { CheckboxGroupProps } from "../../shared/ui/checkbox-group/checkbox-group";
-
-import cities from "../../../public/db/cities.json";
-import categories from "../../../public/db/categories.json";
-
 import type { Filters } from "../../entities/types";
-import type { OptionType } from "../../shared/ui/RadioGroup/Option";
 
 import { CrossIcon } from "../../assets/img/icons";
+import {
+  modeOptions,
+  genderOptions,
+  skillsOptions,
+  citiesOptions,
+} from "../../shared/lib/constants";
 
 import { useState } from "react";
 
 export const Sidebar = () => {
-  const [chosenMode, setChosenMode] = useState<Filters["mode"]>("all");
-  const [chosenGender, setChosenGender] =
-    useState<Filters["gender"]>("no_matter");
-  const [chosenCities, setChosenCities] = useState<Filters["cityIds"]>([]);
-  const [chosenSkills, setChosenSkills] = useState<Filters["skillIds"]>([]);
+  const initialFilters: Filters = {
+    mode: "all",
+    gender: "no_matter",
+    skillIds: [],
+    cityIds: [],
+  };
 
-  const modeOptions: OptionType[] = [
-    { title: "Всё", value: "all" },
-    { title: "Могу научить", value: "teach" },
-    { title: "Хочу научиться", value: "learn" },
-  ];
+  const [filters, setFilters] = useState<Filters>(initialFilters);
 
-  const genderOptions: OptionType[] = [
-    { title: "Не имеет значения", value: "no_matter" },
-    { title: "Мужской", value: "male" },
-    { title: "Женский", value: "female" },
-  ];
-
-  const skillsOptions: CheckboxGroupProps[] = categories.map((cat) => ({
-    category: {
-      id: cat.id,
-      name: cat.name,
-      value: cat.id.toString(),
-    },
-    items: cat.subcategories.map((sub) => ({
-      ...sub,
-      value: sub.id.toString(),
-    })),
-    selectedItems: cat.subcategories
-      .map((sub) => ({
-        ...sub,
-        value: sub.id.toString(),
-      }))
-      .filter((item) => chosenSkills.includes(item.id)),
-    handleSubItemChange: ({ id }: CheckboxType) => {
-      setChosenSkills((prev) =>
-        prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id],
-      );
-    },
-  }));
-
-  const citiesOptions: CheckboxType[] = cities.map((city) => ({
-    ...city,
-    value: city.id.toString(),
-  }));
+  const skillsOptionsExtended: CheckboxGroupProps[] = skillsOptions.map(
+    (item) => ({
+      ...item,
+      selectedItems: item.items.filter((it) =>
+        filters.skillIds.includes(it.id),
+      ),
+      handleSubItemChange: ({ id }: CheckboxType) => {
+        setFilters((prev) => ({
+          ...prev,
+          skillIds: prev.skillIds.includes(id)
+            ? prev.skillIds.filter((v) => v !== id)
+            : [...prev.skillIds, id],
+        }));
+      },
+    }),
+  );
 
   return (
     <div className={style.sidebar}>
       <div className={style.sidebar_title}>
         <p className={style.sidebar_title_text}>
           Фильтры
-          {(chosenCities.length > 0 || chosenSkills.length > 0) &&
-            ` (${chosenSkills.length + chosenCities.length})`}
+          {(filters.cityIds.length > 0 || filters.skillIds.length > 0) &&
+            ` (${filters.skillIds.length + filters.cityIds.length})`}
         </p>
-        {(chosenCities.length > 0 || chosenSkills.length > 0) && (
+        {(filters.cityIds.length > 0 || filters.skillIds.length > 0) && (
           <button
             className={style.reset_button}
-            onClick={() => {
-              setChosenCities([]);
-              setChosenSkills([]);
-            }}
+            onClick={() => setFilters(initialFilters)}
           >
             Сбросить{<CrossIcon />}
           </button>
@@ -90,27 +68,35 @@ export const Sidebar = () => {
           title=""
           options={modeOptions}
           selected={
-            modeOptions.find(({ value }) => value === chosenMode) ||
+            modeOptions.find(({ value }) => value === filters.mode) ||
             modeOptions[0]
           }
-          onChange={(option) => setChosenMode(option.value as Filters["mode"])}
+          onChange={(option) =>
+            setFilters((prev) => ({
+              ...prev,
+              mode: option.value as Filters["mode"],
+            }))
+          }
         />
         <CheckboxGroupList
           title="Навыки"
           buttonText="Все категории"
           limit={5}
-          items={skillsOptions}
+          items={skillsOptionsExtended}
         />
         <RadioGroup
           name="gender"
           title="Пол автора"
           options={genderOptions}
           selected={
-            genderOptions.find(({ value }) => value === chosenGender) ||
+            genderOptions.find(({ value }) => value === filters.gender) ||
             genderOptions[0]
           }
           onChange={(option) =>
-            setChosenGender(option.value as Filters["gender"])
+            setFilters((prev) => ({
+              ...prev,
+              gender: option.value as Filters["gender"],
+            }))
           }
         />
         <CheckboxSubgroupList
@@ -119,12 +105,15 @@ export const Sidebar = () => {
           limit={5}
           items={citiesOptions}
           selectedItems={citiesOptions.filter((item) =>
-            chosenCities.includes(item.id),
+            filters.cityIds.includes(item.id),
           )}
           handleSubItemChange={({ id }: CheckboxType) => {
-            setChosenCities((prev) =>
-              prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id],
-            );
+            setFilters((prev) => ({
+              ...prev,
+              cityIds: prev.cityIds.includes(id)
+                ? prev.cityIds.filter((v) => v !== id)
+                : [...prev.cityIds, id],
+            }));
           }}
         />
       </div>
