@@ -54,7 +54,7 @@ export const Sidebar = () => {
       .filter((item) => chosenSkills.includes(item.id)),
     handleSubItemChange: ({ id }: CheckboxType) => {
       setChosenSkills((prev) =>
-        prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id]
+        prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id],
       );
     },
   }));
@@ -119,11 +119,11 @@ export const Sidebar = () => {
           limit={5}
           items={citiesOptions}
           selectedItems={citiesOptions.filter((item) =>
-            chosenCities.includes(item.id)
+            chosenCities.includes(item.id),
           )}
           handleSubItemChange={({ id }: CheckboxType) => {
             setChosenCities((prev) =>
-              prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id]
+              prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id],
             );
           }}
         />

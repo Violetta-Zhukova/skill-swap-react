@@ -11,8 +11,8 @@
 .sidebar_title {
   display: flex;
   justify-content: space-between;
-  margin-block-end: 40px;
   align-items: center;
+  margin-block-end: 40px;
 }
 
 .sidebar_title_text {
