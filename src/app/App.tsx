@@ -1,5 +1,11 @@
+import { Sidebar } from "../widgets/sidebar";
+
 function App() {
-  return <div></div>;
+  return (
+    <div style={{ height: "100vh" }}>
+      <Sidebar />
+    </div>
+  );
 }
 
 export default App;
