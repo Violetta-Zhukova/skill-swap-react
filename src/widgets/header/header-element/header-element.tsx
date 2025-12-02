@@ -23,7 +23,7 @@ export const HeaderElement: FC<THeaderElementProps> = ({
           <Logo />
           <ul className={styles.list}>
             <li>
-              <TextLink>{"О проекте"}</TextLink>
+              <TextLink>О проекте</TextLink>
             </li>
             <li>
               <TextLink onClick={handleSkillsClick}>
@@ -45,11 +45,11 @@ export const HeaderElement: FC<THeaderElementProps> = ({
           <ul className={styles.buttons}>
             <li>
               <Button onClick={() => {}} type={"secondary"}>
-                {"Войти"}
+                Войти
               </Button>
             </li>
             <li>
-              <Button onClick={() => {}}>{"Зарегистрироваться"}</Button>
+              <Button onClick={() => {}}>Зарегистрироваться</Button>
             </li>
           </ul>
         </nav>

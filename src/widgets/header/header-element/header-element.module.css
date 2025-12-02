@@ -14,7 +14,6 @@
 .list {
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 24px;
   color: var(--text-color);
   font-weight: var(--font-weight);

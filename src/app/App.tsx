@@ -1,11 +1,5 @@
-import { Header } from "../widgets/header";
-
 function App() {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
