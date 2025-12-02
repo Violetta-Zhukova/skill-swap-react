@@ -1,7 +1,7 @@
-import React, { type ChangeEvent, type ReactNode } from "react";
+import React, { type ChangeEvent, type HTMLProps, type ReactNode } from "react";
 import style from "./style.module.css";
 
-export type InputProps = {
+export type InputProps = Omit<HTMLProps<HTMLInputElement>, "onChange"> & {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   name: string;
   placeholder?: string;

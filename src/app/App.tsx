@@ -59,10 +59,6 @@ function App() {
         name="edit"
         value={edit}
         placeholder="Изменить что-то"
-        onEdit={() => {
-          if (editInputRef.current)
-            console.log("Имзеняюсь!", editInputRef.current.value);
-        }}
         onChange={(e) => {
           console.log("Ввод в изменяемый");
           setEdit(e.target.value);
