@@ -14,7 +14,7 @@ export const RegisterStepInfo: FC<RegisterStepInfoProps> = ({
 }) => {
   return (
     <div className={styles.wrapper}>
-      <img src={image} alt="" className={styles.image} />
+      <img src={image} alt={title} className={styles.image} />
 
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.subtitle}>{subtitle}</p>
