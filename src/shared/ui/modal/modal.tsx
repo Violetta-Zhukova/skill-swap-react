@@ -25,6 +25,6 @@ export const Modal: FC<TModalProps> = ({ children, onClose }) => {
 
   return ReactDOM.createPortal(
     <ModalElement onClose={onClose}>{children}</ModalElement>,
-    modalRoot as HTMLDivElement
+    modalRoot as HTMLDivElement,
   );
 };
