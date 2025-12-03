@@ -1,0 +1,28 @@
+.card_gallery {
+  margin: 0 36px;
+}
+
+.card_gallery_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+  color: var(--text-color);
+  font-size: var(--line-height-h1);
+  font-family: var(--font-accent);
+}
+
+.card_gallery_main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+  gap: 24px;
+}
+
+.card_gallery_button {
+  display: flex;
+}
+
+.card_gallery_actions {
+  display: flex;
+}
