@@ -11,20 +11,16 @@ import type { Filters } from "../../entities/types";
 import { CrossIcon } from "../../assets/img/icons";
 import { modeOptions, genderOptions } from "../../shared/lib/constants";
 
-import { useState } from "react";
-import { useSelector } from "../../features/store";
+import { useSelector, useDispatch } from "../../features/store";
+import { setFilters, reset } from "../../features/filters/filtersSlice";
+import { isNotEmptySelector } from "../../features/filters/filtersSlice";
 
 export const Sidebar = () => {
-  const initialFilters: Filters = {
-    mode: "all",
-    gender: "no_matter",
-    skillIds: [],
-    cityIds: [],
-  };
-
-  const [filters, setFilters] = useState<Filters>(initialFilters);
+  const dispatch = useDispatch();
   const { categories } = useSelector((store) => store.categories);
   const { cities } = useSelector((store) => store.cities);
+  const { filters } = useSelector((store) => store.filters);
+  const isNotEmpty = useSelector(isNotEmptySelector);
 
   const skillsOptions: CheckboxGroupProps[] = categories.map((cat) => ({
     category: {
@@ -43,12 +39,13 @@ export const Sidebar = () => {
       }))
       .filter((sub) => filters.skillIds.includes(sub.id)),
     handleSubItemChange: ({ id }: CheckboxType) => {
-      setFilters((prev) => ({
-        ...prev,
-        skillIds: prev.skillIds.includes(id)
-          ? prev.skillIds.filter((v) => v !== id)
-          : [...prev.skillIds, id],
-      }));
+      dispatch(
+        setFilters({
+          skillIds: filters.skillIds.includes(id)
+            ? filters.skillIds.filter((v) => v !== id)
+            : [...filters.skillIds, id],
+        }),
+      );
     },
   }));
 
@@ -62,13 +59,13 @@ export const Sidebar = () => {
       <div className={style.sidebar_title}>
         <p className={style.sidebar_title_text}>
           Фильтры
-          {(filters.cityIds.length > 0 || filters.skillIds.length > 0) &&
+          {isNotEmpty &&
             ` (${filters.skillIds.length + filters.cityIds.length})`}
         </p>
-        {(filters.cityIds.length > 0 || filters.skillIds.length > 0) && (
+        {isNotEmpty && (
           <button
             className={style.reset_button}
-            onClick={() => setFilters(initialFilters)}
+            onClick={() => dispatch(reset())}
           >
             Сбросить{<CrossIcon />}
           </button>
@@ -84,10 +81,7 @@ export const Sidebar = () => {
             modeOptions[0]
           }
           onChange={(option) =>
-            setFilters((prev) => ({
-              ...prev,
-              mode: option.value as Filters["mode"],
-            }))
+            dispatch(setFilters({ mode: option.value as Filters["mode"] }))
           }
         />
         <CheckboxGroupList
@@ -105,10 +99,7 @@ export const Sidebar = () => {
             genderOptions[0]
           }
           onChange={(option) =>
-            setFilters((prev) => ({
-              ...prev,
-              gender: option.value as Filters["gender"],
-            }))
+            dispatch(setFilters({ gender: option.value as Filters["gender"] }))
           }
         />
         <CheckboxSubgroupList
@@ -120,12 +111,13 @@ export const Sidebar = () => {
             filters.cityIds.includes(item.id),
           )}
           handleSubItemChange={({ id }: CheckboxType) => {
-            setFilters((prev) => ({
-              ...prev,
-              cityIds: prev.cityIds.includes(id)
-                ? prev.cityIds.filter((v) => v !== id)
-                : [...prev.cityIds, id],
-            }));
+            dispatch(
+              setFilters({
+                cityIds: filters.cityIds.includes(id)
+                  ? filters.cityIds.filter((v) => v !== id)
+                  : [...filters.cityIds, id],
+              }),
+            );
           }}
         />
       </div>
