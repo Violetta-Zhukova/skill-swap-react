@@ -47,4 +47,3 @@ export const categoryColors: Record<number, string> = {
   5: "var(--tag-home-color)",
   6: "var(--tag-health-color)",
 };
-

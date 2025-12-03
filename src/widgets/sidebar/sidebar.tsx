@@ -9,14 +9,10 @@ import type { CheckboxGroupProps } from "../../shared/ui/checkbox-group/checkbox
 import type { Filters } from "../../entities/types";
 
 import { CrossIcon } from "../../assets/img/icons";
-import {
-  modeOptions,
-  genderOptions,
-  skillsOptions,
-  citiesOptions,
-} from "../../shared/lib/constants";
+import { modeOptions, genderOptions } from "../../shared/lib/constants";
 
 import { useState } from "react";
+import { useSelector } from "../../features/store";
 
 export const Sidebar = () => {
   const initialFilters: Filters = {
@@ -27,23 +23,56 @@ export const Sidebar = () => {
   };
 
   const [filters, setFilters] = useState<Filters>(initialFilters);
+  const { categories } = useSelector((store) => store.categories);
+  const { cities } = useSelector((store) => store.cities);
 
-  const skillsOptionsExtended: CheckboxGroupProps[] = skillsOptions.map(
-    (item) => ({
-      ...item,
-      selectedItems: item.items.filter((it) =>
-        filters.skillIds.includes(it.id),
-      ),
-      handleSubItemChange: ({ id }: CheckboxType) => {
-        setFilters((prev) => ({
-          ...prev,
-          skillIds: prev.skillIds.includes(id)
-            ? prev.skillIds.filter((v) => v !== id)
-            : [...prev.skillIds, id],
-        }));
-      },
-    }),
-  );
+  const skillsOptions: CheckboxGroupProps[] = categories.map((cat) => ({
+    category: {
+      id: cat.id,
+      name: cat.name,
+      value: cat.id.toString(),
+    },
+    items: cat.subcategories.map((sub) => ({
+      ...sub,
+      value: sub.id.toString(),
+    })),
+    selectedItems: cat.subcategories
+      .map((sub) => ({
+        ...sub,
+        value: sub.id.toString(),
+      }))
+      .filter((sub) => filters.skillIds.includes(sub.id)),
+    handleSubItemChange: ({ id }: CheckboxType) => {
+      setFilters((prev) => ({
+        ...prev,
+        skillIds: prev.skillIds.includes(id)
+          ? prev.skillIds.filter((v) => v !== id)
+          : [...prev.skillIds, id],
+      }));
+    },
+  }));
+
+  const citiesOptions: CheckboxType[] = cities.map((city) => ({
+    ...city,
+    value: city.id.toString(),
+  }));
+
+  // const skillsOptionsExtended: CheckboxGroupProps[] = skillsOptions.map(
+  //   (item) => ({
+  //     ...item,
+  //     selectedItems: item.items.filter((it) =>
+  //       filters.skillIds.includes(it.id)
+  //     ),
+  //     handleSubItemChange: ({ id }: CheckboxType) => {
+  //       setFilters((prev) => ({
+  //         ...prev,
+  //         skillIds: prev.skillIds.includes(id)
+  //           ? prev.skillIds.filter((v) => v !== id)
+  //           : [...prev.skillIds, id],
+  //       }));
+  //     },
+  //   })
+  // );
 
   return (
     <div className={style.sidebar}>
@@ -82,7 +111,7 @@ export const Sidebar = () => {
           title="Навыки"
           buttonText="Все категории"
           limit={5}
-          items={skillsOptionsExtended}
+          items={skillsOptions}
         />
         <RadioGroup
           name="gender"
