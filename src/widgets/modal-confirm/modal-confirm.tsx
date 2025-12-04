@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import styles from "./modal-confirm.module.css";
+import { Button } from "../../shared/ui/Button/Button";
 
 type TModalConfirmProps = {
   image: string;
@@ -20,8 +21,8 @@ export const ModalConfirm: FC<TModalConfirmProps> = ({
     <img src={image} className={styles.image} />
     <h2 className={styles.title}>{title}</h2>
     <p className={styles.content}>{text}</p>
-    <button onClick={onClose} className={styles.button}>
+    <Button fullWidth onClick={onClose}>
       {buttonText}
-    </button>
+    </Button>
   </>
 );
