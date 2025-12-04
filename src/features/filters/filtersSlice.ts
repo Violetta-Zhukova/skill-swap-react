@@ -17,7 +17,7 @@ export const filtersSlice = createSlice({
     setFilters: (state, action: PayloadAction<Partial<Filters>>) => {
       state.filters = { ...state.filters, ...action.payload };
     },
-    reset: () => initialState,
+    resetFilters: () => initialState,
   },
   selectors: {
     isNotEmptySelector: (state) =>
@@ -33,7 +33,7 @@ export const filtersSlice = createSlice({
   },
 });
 
-export const { setFilters, reset } = filtersSlice.actions;
+export const { setFilters, resetFilters } = filtersSlice.actions;
 export const { isNotEmptySelector, filtersCounterSelector } =
   filtersSlice.selectors;
 export default filtersSlice.reducer;

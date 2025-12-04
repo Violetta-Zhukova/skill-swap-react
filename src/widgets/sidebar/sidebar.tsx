@@ -12,7 +12,7 @@ import { CrossIcon } from "../../assets/img/icons";
 import { modeOptions, genderOptions } from "../../shared/lib/constants";
 
 import { useSelector, useDispatch } from "../../features/store";
-import { setFilters, reset } from "../../features/filters/filtersSlice";
+import { setFilters, resetFilters } from "../../features/filters/filtersSlice";
 import {
   isNotEmptySelector,
   filtersCounterSelector,
@@ -68,7 +68,7 @@ export const Sidebar = () => {
         {isNotEmpty && (
           <button
             className={style.reset_button}
-            onClick={() => dispatch(reset())}
+            onClick={() => dispatch(resetFilters())}
           >
             Сбросить{<CrossIcon />}
           </button>
