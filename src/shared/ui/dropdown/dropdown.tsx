@@ -9,14 +9,15 @@ import Select, {
 import {
   CustomDropdownIndicator,
   CustomOption,
+  CustomMultiValueContainer,
 } from "./dropdown-custom-components";
 
 type TDropdownComponentProps<T extends { name: string }> = {
   options: T[];
   placeholder: string;
   isMulti?: boolean; //возможен ли множественный выбор
-  closeMenuOnSelect?: boolean; //для isMulti используйте closeMenuOnSelect={false}, чтобы меню не закрывалось
-  required: boolean; //обязательное поле или нет
+  closeMenuOnSelect?: boolean; //для isMulti={true} используйте closeMenuOnSelect={false}, чтобы меню не закрывалось
+  required: boolean; //обязательно что-то выбрать или нет
   withCheckbox?: boolean; //чекбокс нужно сделать {true} для множественного выбора
   isCategory?: boolean; //для внешнего вида чекбокса при множественном выборе, по умолчанию false
 };
@@ -45,6 +46,8 @@ export const DropdownComponent = <T extends { name: string }>({
   const baseComponents = {
     DropdownIndicator: CustomDropdownIndicator,
     IndicatorSeparator: null,
+    MultiValue: CustomMultiValueContainer,
+    MultiValueRemove: () => null,
   };
 
   const componentsWithCheckbox = {
@@ -145,9 +148,10 @@ export const DropdownComponent = <T extends { name: string }>({
       ...baseStyles,
 
       display: "flex",
+      gap: "4px",
       zIndex: "1000",
       flexDirection: "column",
-      padding: "8px 12px",
+      padding: "8px 0px",
       backgroundColor: "var(--card-input-color)",
 
       borderBottom: "1px solid var(--caption-color)",
@@ -162,7 +166,8 @@ export const DropdownComponent = <T extends { name: string }>({
     }),
     menuList: (baseStyles: CSSObjectWithLabel) => ({
       ...baseStyles,
-      padding: "0 8px",
+
+      maxHeight: "300px",
       // Кастомизация скролла
       "&::-webkit-scrollbar": {
         width: "4px",
@@ -188,34 +193,26 @@ export const DropdownComponent = <T extends { name: string }>({
       scrollbarWidth: "thin",
       scrollbarColor: "var(--button-disabled-color) transparent",
     }),
-    option: (baseStyles: CSSObjectWithLabel) => ({
+    option: (
+      baseStyles: CSSObjectWithLabel,
+      state: OptionProps<TSelectOptionProps, boolean>,
+    ) => ({
       ...baseStyles,
-      backgroundColor: "var(--card-input-color)",
+
+      backgroundColor: state.isFocused
+        ? "var(--button-disabled-color)"
+        : "transparent",
+
       cursor: "pointer",
-      color: "var(--text-color)",
+      color: state.isSelected
+        ? "var(--button-pressed-color)"
+        : "var(--text-color)",
       fontSize: "var(--font-size-main)",
       display: "flex",
       alignItems: "center",
       gap: "8px",
-      padding: "4px 0",
+      padding: "4px 20px",
       lineHeight: "1.5",
-    }),
-    multiValue: (base: CSSObjectWithLabel) => ({
-      ...base,
-      backgroundColor: "var(--button-hover-color)",
-      borderRadius: "var(--border-raduis-main)",
-      display: "inline-block",
-      alignItems: "center",
-      gap: "2px",
-      marginBlockEnd: "2px",
-      marginInlineEnd: "2px",
-    }),
-
-    multiValueLabel: (base: CSSObjectWithLabel) => ({
-      ...base,
-      color: "var(--text-color)",
-      fontSize: "var(--font-size-caption)",
-      padding: "4px",
     }),
     multiValueRemove: () => ({
       display: "none",
