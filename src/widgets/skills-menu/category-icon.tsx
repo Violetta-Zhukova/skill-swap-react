@@ -7,7 +7,7 @@ import {
   CreativityIcon,
   EducationIcon,
   HealthIcon,
-} from "../../../assets/img/icons";
+} from "../../assets/img/icons";
 
 type CategoryIconProps = {
   categoryName: string;

@@ -20,15 +20,16 @@
 }
 
 .link {
-  padding: 0;
-  color: var(--button-pressed-color);
-  font-weight: var(--font-weight-accent);
-  font-size: var(--font-size-h4);
-  font-family: var(--font-main);
-  line-height: var(--line-height-caption);
-  background: none;
-  border: none;
-  cursor: pointer;
+  min-height: auto !important;
+  max-height: none !important;
+  padding: 0 !important;
+  color: var(--button-pressed-color) !important;
+  font-weight: var(--font-weight-accent) !important;
+  font-size: var(--font-size-caption) !important;
+  font-family: var(--font-main) !important;
+  line-height: var(--line-height-caption) !important;
+  background: none !important;
+  border: none !important;
 }
 
 .section {
@@ -100,21 +101,9 @@
 
 .notificationButton {
   align-self: flex-start;
-  padding: 12px 24px;
-  color: var(--text-color);
-  font-weight: var(--font-weight);
-  font-size: var(--font-size-caption);
-  font-family: var(--font-main);
-  line-height: var(--line-height-caption);
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: var(--border-raduis-main);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.notificationButton:hover {
-  background-color: var(--button-hover-color);
+  padding: 12px 24px !important;
+  font-size: var(--font-size-caption) !important;
+  line-height: var(--line-height-caption) !important;
 }
 
 .viewedSection {

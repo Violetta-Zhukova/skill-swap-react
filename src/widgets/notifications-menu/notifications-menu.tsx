@@ -1,5 +1,6 @@
 import styles from "./notifications-menu.module.css";
-import { LightbulbIcon } from "../../../assets/img/icons";
+import { LightbulbIcon } from "../../assets/img/icons";
+import { Button } from "../../shared/ui/Button/Button";
 
 type Notification = {
   id: number;
@@ -65,7 +66,13 @@ const NotificationItem = ({
           <div className={styles.notificationDate}>{notification.date}</div>
         </div>
         {showButton && (
-          <button className={styles.notificationButton}>Перейти</button>
+          <Button
+            onClick={() => {}}
+            type="primary"
+            className={styles.notificationButton}
+          >
+            Перейти
+          </Button>
         )}
       </div>
     </div>
@@ -77,7 +84,9 @@ export const NotificationsMenu = () => {
     <div className={styles.notificationsMenu}>
       <div className={styles.header}>
         <h3 className={styles.title}>Новые уведомления</h3>
-        <button className={styles.link}>Прочитать все</button>
+        <Button onClick={() => {}} type="tertiary" className={styles.link}>
+          Прочитать все
+        </Button>
       </div>
 
       <div className={styles.section}>
@@ -93,7 +102,9 @@ export const NotificationsMenu = () => {
       <div className={styles.viewedSection}>
         <div className={styles.sectionHeader}>
           <h4 className={styles.title}>Просмотренные</h4>
-          <button className={styles.link}>Очистить</button>
+          <Button onClick={() => {}} type="tertiary" className={styles.link}>
+            Очистить
+          </Button>
         </div>
         {viewedNotifications.map((notification) => (
           <NotificationItem
