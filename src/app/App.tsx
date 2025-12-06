@@ -1,12 +1,12 @@
 import { Header } from "../widgets/header";
-import { NotFound404 } from "../pages/not-found-404/NotFound404";
+import { CardsGalleryWrapper } from "../widgets/gallery-cards/cards-gallery-wrapper";
 import { Footer } from "../widgets/footer";
 
 function App() {
   return (
     <>
       <Header />
-      <NotFound404 />
+      <CardsGalleryWrapper />
       <Footer />
     </>
   );
