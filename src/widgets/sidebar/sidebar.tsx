@@ -111,14 +111,15 @@ export const Sidebar = () => {
           limit={5}
           items={citiesOptions}
           selectedItems={citiesOptions.filter((item) =>
-            filters.cityIds.includes(item.id),
+            filters.cityNames.includes(item.name),
           )}
-          handleSubItemChange={({ id }: TCheckboxType) => {
+          handleSubItemChangeByID={({ id }: TCheckboxType) => {
+          handleSubItemChange={({ name }: TCheckboxType) => {
             dispatch(
               setFilters({
-                cityIds: filters.cityIds.includes(id)
-                  ? filters.cityIds.filter((v) => v !== id)
-                  : [...filters.cityIds, id],
+                cityNames: filters.cityNames.includes(name)
+                  ? filters.cityNames.filter((v) => v !== name)
+                  : [...filters.cityNames, name],
               }),
             );
           }}
