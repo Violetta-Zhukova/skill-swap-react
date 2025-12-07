@@ -199,10 +199,7 @@ export const DropdownComponent = <T extends { name: string }>({
     ) => ({
       ...baseStyles,
 
-      backgroundColor: state.isFocused
-        ? "var(--button-disabled-color)"
-        : "transparent",
-
+      backgroundColor: "transparent",
       cursor: "pointer",
       color: state.isSelected
         ? "var(--button-pressed-color)"
@@ -213,6 +210,10 @@ export const DropdownComponent = <T extends { name: string }>({
       gap: "8px",
       padding: "4px 20px",
       lineHeight: "1.5",
+
+      "&:hover": {
+        backgroundColor: "var(--button-disabled-color)",
+      },
     }),
     multiValueRemove: () => ({
       display: "none",
