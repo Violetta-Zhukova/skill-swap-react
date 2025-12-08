@@ -16,18 +16,16 @@ export const UsersPage: FC = () => {
   const hasActiveFilters = useSelector(isNotEmptySelector);
 
   const popularUsers = useMemo(
-    () => users.filter((user) => user.likes > 15).slice(0, 3),
+    () => users.filter((user) => user.likes > 15),
     [users],
   );
 
   const newUsers = useMemo(
     () =>
-      users
-        .filter((user) => {
-          const createdTime = new Date(user.createdAt).getTime();
-          return !Number.isNaN(createdTime) && createdTime >= MONTH_AGO;
-        })
-        .slice(0, 3),
+      users.filter((user) => {
+        const createdTime = new Date(user.createdAt).getTime();
+        return !Number.isNaN(createdTime) && createdTime >= MONTH_AGO;
+      }),
     [users],
   );
 
@@ -44,16 +42,21 @@ export const UsersPage: FC = () => {
           <CardsGallery
             cards={filteredUsers}
             title={`Подходящие предложения: ${filteredUsers.length}`}
+            sortable
           />
         ) : (
           <>
             <>
               <div className={style.section}>
-                <CardsGallery cards={popularUsers} title="Популярное" />
+                <CardsGallery
+                  cards={popularUsers}
+                  title="Популярное"
+                  maxCards={3}
+                />
               </div>
 
               <div className={style.section}>
-                <CardsGallery cards={newUsers} title="Новое" />
+                <CardsGallery cards={newUsers} title="Новое" maxCards={3} />
               </div>
 
               <div className={style.section}>
