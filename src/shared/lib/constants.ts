@@ -1,18 +1,6 @@
-import cities from "../../../public/db/cities.json";
-import categories from "../../../public/db/categories.json";
-
 import type { TOptionType } from "../ui/RadioGroup/Option";
-import type { TCheckboxType } from "../ui/checkbox-group/checkbox/checkbox";
-import type { TCheckboxGroupProps } from "../ui/checkbox-group/checkbox-group";
 
-export const categoryColors: Record<number, string> = {
-  1: "var(--tag-business-color)",
-  2: "var(--tag-art-color)",
-  3: "var(--tag-languages-color)",
-  4: "var(--tag-education-color)",
-  5: "var(--tag-home-color)",
-  6: "var(--tag-health-color)",
-};
+// constants for filters
 
 export const modeOptions: TOptionType[] = [
   { title: "Всё", value: "all" },
@@ -26,20 +14,13 @@ export const genderOptions: TOptionType[] = [
   { title: "Женский", value: "female" },
 ];
 
-export const skillsOptions: Pick<TCheckboxGroupProps, "category" | "items">[] =
-  categories.map((cat) => ({
-    category: {
-      id: cat.id,
-      name: cat.name,
-      value: cat.id.toString(),
-    },
-    items: cat.subcategories.map((sub) => ({
-      ...sub,
-      value: sub.id.toString(),
-    })),
-  }));
+// constants for colors
 
-export const citiesOptions: TCheckboxType[] = cities.map((city) => ({
-  ...city,
-  value: city.id.toString(),
-}));
+export const categoryColors: Record<number, string> = {
+  1: "var(--tag-business-color)",
+  2: "var(--tag-art-color)",
+  3: "var(--tag-languages-color)",
+  4: "var(--tag-education-color)",
+  5: "var(--tag-home-color)",
+  6: "var(--tag-health-color)",
+};

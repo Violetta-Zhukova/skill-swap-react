@@ -84,9 +84,9 @@ export const NotificationsMenu = () => {
     <div className={styles.notificationsMenu}>
       <div className={styles.header}>
         <h3 className={styles.title}>Новые уведомления</h3>
-        <Button onClick={() => {}} type="tertiary" className={styles.link}>
+        <button className={styles.link} onClick={() => {}}>
           Прочитать все
-        </Button>
+        </button>
       </div>
 
       <div className={styles.section}>
@@ -102,9 +102,9 @@ export const NotificationsMenu = () => {
       <div className={styles.viewedSection}>
         <div className={styles.sectionHeader}>
           <h4 className={styles.title}>Просмотренные</h4>
-          <Button onClick={() => {}} type="tertiary" className={styles.link}>
+          <button className={styles.link} onClick={() => {}}>
             Очистить
-          </Button>
+          </button>
         </div>
         {viewedNotifications.map((notification) => (
           <NotificationItem
