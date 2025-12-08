@@ -2,6 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./app/App.tsx";
+import "./app/styles/datepicker-overrides.css";
+import "react-datepicker/dist/react-datepicker.css";
 import { Provider } from "react-redux";
 import store from "./features/store.ts";
 
