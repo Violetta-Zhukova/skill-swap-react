@@ -1,49 +1,52 @@
-import React, { type ChangeEvent } from "react";
+import React, { useState, type ChangeEvent } from "react";
 import { Input } from "./Input";
 import searchIcon from "../../../assets/icons/search.svg";
 import style from "./style.module.css";
+import { useDispatch } from "../../../features/store";
+import { setFilters } from "../../../features/filters/filtersSlice";
 
 type TSearchInputProps = {
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  name: string;
-  placeholder?: string;
-  id?: string;
-  value?: string;
-  type?: string;
-  onSearch: () => void;
+  placeholder: string;
   className?: string;
 };
 
 export const SearchInput = React.forwardRef<
   HTMLInputElement,
   TSearchInputProps
->(
-  (
-    {
-      className,
-      onChange,
-      onSearch,
-      name,
-      placeholder = "Искать навык",
-      id,
-      value,
-    },
-    ref,
-  ) => {
-    return (
-      <Input
-        className={`${style.input_search} ${className || ""}`}
-        name={name}
-        onChange={onChange}
-        ref={ref}
-        placeholder={placeholder}
-        id={id}
-        value={value}
-      >
-        <button type="button" onClick={onSearch}>
-          <img src={searchIcon} alt={"Поиск"} />
-        </button>
-      </Input>
-    );
-  },
-);
+>(({ className, placeholder }, ref) => {
+  const [enteredValue, setEnteredValue] = useState("");
+  const dispatch = useDispatch();
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setEnteredValue(event.target.value);
+  };
+
+  const handleClick = () => {
+    if (enteredValue.trim()) {
+      dispatch(setFilters({ searchInputValue: enteredValue }));
+    }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleClick();
+    }
+  };
+
+  return (
+    <Input
+      className={`${style.input_search} ${className || ""}`}
+      type="text"
+      name="search-input"
+      onChange={handleChange}
+      onKeyDown={handleKeyDown}
+      ref={ref}
+      placeholder={placeholder}
+      value={enteredValue}
+    >
+      <button type="button" onClick={handleClick}>
+        <img src={searchIcon} alt={"Поиск"} />
+      </button>
+    </Input>
+  );
+});
