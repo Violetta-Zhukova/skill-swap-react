@@ -1,4 +1,4 @@
-import React, { useState, type ChangeEvent } from "react";
+import React, { useEffect, useState, type ChangeEvent } from "react";
 import { Input } from "./Input";
 import searchIcon from "../../../assets/icons/search.svg";
 import style from "./style.module.css";
@@ -18,9 +18,9 @@ export const SearchInput = React.forwardRef<
     { className = `${style.input}  ${style.input_search}`, placeholder },
     ref,
   ) => {
-    const [enteredValue, setEnteredValue] = useState("");
-    const dispatch = useDispatch();
     const { searchInputValue } = useSelector((state) => state.filters.filters);
+    const [enteredValue, setEnteredValue] = useState(searchInputValue);
+    const dispatch = useDispatch();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
       setEnteredValue(event.target.value);
@@ -36,6 +36,10 @@ export const SearchInput = React.forwardRef<
         handleClick();
       }
     };
+
+    useEffect(() => {
+      setEnteredValue(searchInputValue);
+    }, [searchInputValue]);
 
     return (
       <Input
