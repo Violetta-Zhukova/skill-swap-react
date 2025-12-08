@@ -1,7 +1,6 @@
 import { useState } from "react";
 import style from "./date-selection-input.module.css";
 import DatePicker, { registerLocale } from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import { Button } from "../../Button/Button";
 import { ru } from "date-fns/locale/ru";
 import { CustomInput } from "./custom-input";
@@ -55,8 +54,6 @@ export const DateSelectionInput = () => {
       open={isOpen}
       onInputClick={() => setIsOpen(true)}
       onClickOutside={() => setIsOpen(false)}
-      popperClassName={style.popper}
-      calendarClassName={style.calendar}
     >
       <div className={style.buttons_container}>
         <Button onClick={handleCancel} type={"secondary"}>

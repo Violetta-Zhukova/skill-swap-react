@@ -1,33 +1,10 @@
 import type { ReactDatePickerCustomHeaderProps } from "react-datepicker";
 import { getYear, getMonth } from "date-fns";
 import style from "./date-selection-input.module.css";
+import { daysOfWeek, months } from "../../../lib/constants";
+import { getRange } from "../../../lib/helpers";
 
-const MONTHS = [
-  "Январь",
-  "Февраль",
-  "Март",
-  "Апрель",
-  "Май",
-  "Июнь",
-  "Июль",
-  "Август",
-  "Сентябрь",
-  "Октябрь",
-  "Ноябрь",
-  "Декабрь",
-];
-
-const DAYS_OF_WEEK = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-
-const range = (start: number, end: number, step = 1): number[] => {
-  const result: number[] = [];
-  for (let i = start; i < end; i += step) {
-    result.push(i);
-  }
-  return result;
-};
-
-const years = range(1900, getYear(new Date()) + 1, 1) as number[];
+const years = getRange(1900, getYear(new Date()) + 1, 1) as number[];
 
 export const CustomHeader = ({
   date,
@@ -40,12 +17,12 @@ export const CustomHeader = ({
         <select
           name="month"
           className={style.selector}
-          value={MONTHS[getMonth(date)]}
+          value={months[getMonth(date)]}
           onChange={({ target: { value } }) =>
-            changeMonth(MONTHS.indexOf(value as (typeof MONTHS)[number]))
+            changeMonth(months.indexOf(value as (typeof months)[number]))
           }
         >
-          {MONTHS.map((option) => (
+          {months.map((option) => (
             <option key={option} value={option}>
               {option}
             </option>
@@ -70,7 +47,7 @@ export const CustomHeader = ({
     </div>
 
     <div className={style.weeks}>
-      {DAYS_OF_WEEK.map((day) => (
+      {daysOfWeek.map((day) => (
         <div key={day} className={style.week_day}>
           {day}
         </div>
