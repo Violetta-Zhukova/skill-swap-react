@@ -14,9 +14,14 @@ type TAuthData = {
 type TAuthFormProps = {
   onSubmit: ({ email, password }: TAuthData) => void;
   className?: string;
+  submitButtonText: string;
 };
 
-export const AuthForm: FC<TAuthFormProps> = ({ onSubmit, className }) => {
+export const AuthForm: FC<TAuthFormProps> = ({
+  onSubmit,
+  className,
+  submitButtonText,
+}) => {
   const regSchema = yup.object().shape({
     email: yup
       .string()
@@ -126,7 +131,7 @@ export const AuthForm: FC<TAuthFormProps> = ({ onSubmit, className }) => {
           className={`${styles.registration__input} ${styles.input_password}`}
         ></PasswordInput>
         <Button disabled={!isValid} fullWidth onClick={() => {}}>
-          Далее
+          {submitButtonText}
         </Button>
       </form>
     </div>
