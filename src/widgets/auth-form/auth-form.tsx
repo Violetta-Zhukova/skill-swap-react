@@ -17,7 +17,6 @@ type TAuthFormProps = {
   className?: string;
   submitButtonText: string;
   optionalLinkText?: string;
-  optionalLinkHref?: string;
 };
 
 export const AuthForm: FC<TAuthFormProps> = ({
@@ -25,7 +24,6 @@ export const AuthForm: FC<TAuthFormProps> = ({
   className,
   submitButtonText,
   optionalLinkText,
-  optionalLinkHref,
 }) => {
   const regSchema = yup.object().shape({
     email: yup
@@ -138,11 +136,8 @@ export const AuthForm: FC<TAuthFormProps> = ({
         <Button disabled={!isValid} fullWidth onClick={() => {}}>
           {submitButtonText}
         </Button>
-        {optionalLinkText && optionalLinkHref && (
-          <TextLink
-            href={optionalLinkHref}
-            className={styles.registration__optional}
-          >
+        {optionalLinkText && (
+          <TextLink className={styles.registration__optional}>
             {optionalLinkText}
           </TextLink>
         )}

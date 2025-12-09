@@ -16,8 +16,7 @@ export const Login = () => {
           <AuthForm
             onSubmit={() => {}}
             submitButtonText="Войти"
-            optionalLinkHref="/"
-            /*как будет роутинг заменить, это для кнопки Зарегистрироваться*/ optionalLinkText="Зарегистрироваться"
+            optionalLinkText="Зарегистрироваться"
           />
         </div>
 
