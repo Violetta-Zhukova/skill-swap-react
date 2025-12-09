@@ -44,11 +44,7 @@ export const HeaderElement: FC<THeaderElementProps> = ({
         </ul>
         {!isFilterEnabled && (
           <div className={styles.input}>
-            <SearchInput
-              onChange={() => {}}
-              name={"Искать навык"}
-              onSearch={() => {}}
-            />
+            <SearchInput placeholder="Искать навык" />
           </div>
         )}
 

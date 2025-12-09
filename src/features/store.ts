@@ -8,16 +8,14 @@ import { citiesSlice } from "./cities/citiesSlice";
 import { categoriesSlice } from "./categories/categoriesSlice";
 import { usersSlice } from "./users/usersSlice";
 import { filtersSlice } from "./filters/filtersSlice";
-import authReducer from "./auth/authSlice";
+import { authSlice } from "./auth/authSlice";
 
 const rootReducer = combineSlices(
   citiesSlice,
   categoriesSlice,
   usersSlice,
   filtersSlice,
-  {
-    auth: authReducer,
-  },
+  authSlice,
 );
 
 const store = configureStore({

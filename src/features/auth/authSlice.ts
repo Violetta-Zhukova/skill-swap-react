@@ -33,9 +33,12 @@ export const authSlice = createSlice({
       state.isAuthenticated = false;
       state.loading = false;
     },
-    setUser: (state, action: PayloadAction<IUser>) => {
+    setCurrentUser: (state, action: PayloadAction<IUser>) => {
       state.currentUser = action.payload;
       state.isAuthenticated = true;
+    },
+    clearCurrentUser: (state) => {
+      state.currentUser = null;
     },
   },
   selectors: {
@@ -45,8 +48,13 @@ export const authSlice = createSlice({
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout, setUser } =
-  authSlice.actions;
+export const {
+  loginStart,
+  loginSuccess,
+  loginFailure,
+  logout,
+  setCurrentUser,
+  clearCurrentUser,
+} = authSlice.actions;
 export const { selectCurrentUser, selectIsAuthenticated, selectAuthLoading } =
   authSlice.selectors;
-export default authSlice.reducer;
