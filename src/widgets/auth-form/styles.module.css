@@ -1,5 +1,5 @@
 .registration {
-  padding: 120px 60px;
+  padding: 116px 60px;
   background-color: var(--card-input-color);
 }
 
@@ -22,6 +22,7 @@
 .registration__separator {
   position: relative;
   margin-bottom: 24px;
+  font-family: var(--font-accent);
   text-align: center;
   text-transform: uppercase;
 }
@@ -44,4 +45,12 @@
 
 .registration__input {
   margin-bottom: 16px;
+}
+
+.registration__optional {
+  justify-self: center;
+  margin-top: 12px;
+  color: var(
+    --button-pressed-color
+  ) !important ; /* по другому берется более темный цвет из компонента TextLink */
 }
