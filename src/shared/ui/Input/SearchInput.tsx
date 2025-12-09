@@ -1,8 +1,8 @@
-import React, { useState, type ChangeEvent } from "react";
+import React, { useEffect, useState, type ChangeEvent } from "react";
 import { Input } from "./Input";
 import searchIcon from "../../../assets/icons/search.svg";
 import style from "./style.module.css";
-import { useDispatch } from "../../../features/store";
+import { useDispatch, useSelector } from "../../../features/store";
 import { setFilters } from "../../../features/filters/filtersSlice";
 
 type TSearchInputProps = {
@@ -14,7 +14,8 @@ export const SearchInput = React.forwardRef<
   HTMLInputElement,
   TSearchInputProps
 >(({ className, placeholder }, ref) => {
-  const [enteredValue, setEnteredValue] = useState("");
+  const { searchInputValue } = useSelector((state) => state.filters.filters);
+  const [enteredValue, setEnteredValue] = useState(searchInputValue);
   const dispatch = useDispatch();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -22,9 +23,8 @@ export const SearchInput = React.forwardRef<
   };
 
   const handleClick = () => {
-    if (enteredValue.trim()) {
+    if (searchInputValue !== enteredValue)
       dispatch(setFilters({ searchInputValue: enteredValue }));
-    }
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -32,6 +32,9 @@ export const SearchInput = React.forwardRef<
       handleClick();
     }
   };
+  useEffect(() => {
+    setEnteredValue(searchInputValue);
+  }, [searchInputValue]);
 
   return (
     <Input
