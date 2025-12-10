@@ -30,10 +30,8 @@ function App() {
           <Route path="*" element={<NotFound404 />} />
           {!loading && (
             <Route
-              path="skill"
-              element={
-                <SkillPage user={users[0]} similarUsers={users.slice(1, 9)} />
-              }
+              path="skill/:id"
+              element={<SkillPage similarUsers={users.slice(1, 9)} />}
             />
           )}
         </Routes>

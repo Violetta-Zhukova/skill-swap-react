@@ -16,15 +16,15 @@ export const ShareIcon = () => {
       <path
         d="M14.9999 6.78751L8.66993 10.6225M8.66943 13.282L15.3394 17.2235"
         stroke="#253017"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M17.5 16C18.163 16 18.7989 16.2634 19.2678 16.7322C19.7366 17.2011 20 17.837 20 18.5C20 19.163 19.7366 19.7989 19.2678 20.2678C18.7989 20.7366 18.163 21 17.5 21C16.837 21 16.2011 20.7366 15.7322 20.2678C15.2634 19.7989 15 19.163 15 18.5C15 17.837 15.2634 17.2011 15.7322 16.7322C16.2011 16.2634 16.837 16 17.5 16Z"
         stroke="#253017"
-        stroke-width="1.5"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
       />
     </svg>
   );

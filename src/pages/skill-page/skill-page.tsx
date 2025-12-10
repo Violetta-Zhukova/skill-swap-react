@@ -3,29 +3,26 @@ import { SkillInfo } from "../../widgets/skill-info";
 import type { IUser } from "../../entities/types";
 import { UserCard } from "../../widgets/UserCard/UserCard";
 import { UsersSlider } from "../../widgets/slider/users-slider/users-slider";
-
-import { getCategories } from "../../features/categories/categoriesSlice";
-import { useDispatch, useSelector } from "../../features/store";
-import { useEffect } from "react";
+import { userBySkillId } from "../../features/users/usersSlice";
+import { useSelector } from "../../features/store";
+import { useParams } from "react-router-dom";
 
 export type TSkillPageProps = {
-  user: IUser;
   similarUsers: IUser[];
 };
 
-export const SkillPage = ({ user, similarUsers }: TSkillPageProps) => {
-  const dispatch = useDispatch();
+export const SkillPage = ({ similarUsers }: TSkillPageProps) => {
   const { categories, loading } = useSelector((store) => store.categories);
-
-  useEffect(() => {
-    dispatch(getCategories());
-  }, [dispatch]);
+  const { id } = useParams();
+  const user = useSelector((store) => userBySkillId(store, Number(id)));
 
   return (
     <div className={style.page}>
       <div className={style.info}>
-        <UserCard user={user} categories={loading ? [] : categories} />
-        <SkillInfo skill={user.skillCanTeach} images={user.images} />
+        {user && (
+          <UserCard user={user} categories={loading ? [] : categories} />
+        )}
+        {user && <SkillInfo skill={user.skillCanTeach} images={user.images} />}
       </div>
       <div>
         <p className={style.similar_offers_title}>Похожие предложения</p>
