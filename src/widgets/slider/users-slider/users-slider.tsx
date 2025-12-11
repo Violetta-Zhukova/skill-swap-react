@@ -5,11 +5,11 @@ import {
 } from "@splidejs/react-splide";
 import type { Options } from "@splidejs/splide";
 import type { IUser } from "../../../entities/types";
+import { MainUserCard } from "../../main-user-card/main-user-card";
 import { USER_OPTIONS } from "../constants/sliderOptions";
 
 import "@splidejs/splide/dist/css/splide.min.css";
 import styles from "./users-slider.module.css";
-import { MainUserCard } from "../../main-user-card/main-user-card";
 
 type TUsersSliderProps = {
   users: IUser[];
