@@ -52,7 +52,6 @@ export const UserSkillsRegForm: FC = () => {
     control,
     setValue,
     trigger,
-    watch,
     formState: { errors, isValid },
   } = useForm<TUserSkills>({
     resolver: yupResolver(skillsSchema),
@@ -111,7 +110,12 @@ export const UserSkillsRegForm: FC = () => {
     trigger("images");
   };
 
-  const imagesValue = watch("images");
+  const imagesValue = useWatch({
+    control,
+    name: "images",
+    defaultValue: [],
+  });
+
   const handleFileRemoved = (removedFile: IUploadedFile) => {
     const currentFiles = imagesValue as IUploadedFile[];
     const newFiles = currentFiles.filter((item) => item.id !== removedFile.id);
