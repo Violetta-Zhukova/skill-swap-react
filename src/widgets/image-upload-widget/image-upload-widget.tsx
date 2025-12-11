@@ -3,7 +3,7 @@ import { useDropzone, type FileRejection } from "react-dropzone";
 import styles from "./image-upload-widget.module.css";
 import { ImagesIcon, CrossIcon } from "../../assets/img/icons";
 import { Button } from "../../shared/ui/Button/Button";
-import { useImages } from "../../shared/lib/helpers/useImages";
+import { useImages } from "../../shared/hooks/useImages";
 
 export interface IUploadedFile extends File {
   preview: string;
@@ -129,7 +129,7 @@ const ImageUploader: React.FC<IImageUploaderProps> = ({
       >
         <input {...getInputProps()} aria-label="Поле загрузки файлов" />
         <div className={styles.dropzoneContent}>
-          <p className={styles.dropzoneText}>
+          <div className={styles.dropzoneText}>
             {isDragActive ? (
               <span>Отпустите файлы здесь...</span>
             ) : isDragReject ? (
@@ -191,7 +191,7 @@ const ImageUploader: React.FC<IImageUploaderProps> = ({
                 </span>
               </>
             )}
-          </p>
+          </div>
         </div>
       </div>
       {errors.length > 0 && (

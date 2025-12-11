@@ -1,5 +1,5 @@
 import { useLiveQuery } from "dexie-react-hooks";
-import { db } from "../../../db/db";
+import { db } from "../../db/db";
 
 export function useImages() {
   const images = useLiveQuery<File[]>(() => {

@@ -1,5 +1,5 @@
 import { ImagesSlider } from "../images-slider/images-slider";
-import { useImages } from "../../../shared/lib/helpers/useImages";
+import { useImages } from "../../../shared/hooks/useImages";
 import { useMemo, useEffect } from "react";
 
 import styles from "./images-author-slider.module.css";

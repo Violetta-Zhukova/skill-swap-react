@@ -1,7 +1,7 @@
 import { AvatarUpload } from "../../shared/ui/avatar-upload/avatar-upload";
 import PlaceholderIcon from "../../assets/icons/avatar-placeholder.svg";
 import PlusIcon from "../../assets/icons/avatar-plus.svg";
-import { useAvatar } from "../../shared/lib/helpers/useAvatar";
+import { useAvatar } from "../../shared/hooks/useAvatar";
 
 type RegistrationAvatarFieldProps = {
   onAvatarChange: (file: File | null) => void;
