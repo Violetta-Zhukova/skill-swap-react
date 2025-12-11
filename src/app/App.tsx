@@ -9,6 +9,7 @@ import { getUsers } from "../features/users/usersSlice";
 import { getCategories } from "../features/categories/categoriesSlice";
 import { getCities } from "../features/cities/citiesSlice";
 import styles from "./App.module.css";
+import { UserSkillsRegForm } from "../widgets/user-skills-reg-form";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,9 @@ function App() {
     <div className={styles.page}>
       <Header />
       <main className={styles.content}>
+        <div style={{ width: "556px" }}>
+          <UserSkillsRegForm />
+        </div>
         <Routes>
           <Route path="/" element={<UsersPage />} />
           <Route path="*" element={<NotFound404 />} />
