@@ -3,14 +3,9 @@ import { AuthForm } from "../../widgets/auth-form";
 import { RegisterStepInfo } from "../../widgets/register-step-info";
 import Lamp from "../../assets/icons/light-bulb.svg";
 import styles from "./register-step1.module.css";
-import { Logo } from "../../shared/ui/logo";
-
 export const RegisterStep1Page = () => {
   return (
     <div className={styles.page}>
-      <div className={styles.logo}>
-        <Logo />
-      </div>
       <div className={styles.header}>
         <RegisterHeader step={1} />
       </div>

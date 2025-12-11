@@ -47,10 +47,8 @@
   margin-bottom: 16px;
 }
 
-.registration__optional {
+.registration .registration__optional {
   justify-self: center;
   margin-top: 12px;
-  color: var(
-    --button-pressed-color
-  ) !important ; /* по другому берется более темный цвет из компонента TextLink */
+  color: var(--button-pressed-color);
 }
