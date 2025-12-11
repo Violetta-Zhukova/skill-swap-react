@@ -21,5 +21,6 @@ export { SkillIcon } from "./skill";
 export { MessageIcon } from "./message";
 export { MessageTextIcon } from "./message-text";
 export { UserIcon } from "./user";
+export { PencilIcon } from "./edit";
 export { ShareIcon } from "./share";
 export { MoreIcon } from "./more";
