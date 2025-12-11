@@ -2,6 +2,7 @@ import { type FC } from "react";
 import { HeaderElement } from "./header-element/header-element";
 import { useSelector } from "../../features/store";
 import { selectCurrentUser } from "../../features/auth/authSlice";
+import { isNotEmptyWithoutSearchSelector } from "../../features/filters/filtersSlice";
 
 type THeaderProps = {
   handleSkillsClick?: () => void;
@@ -9,7 +10,7 @@ type THeaderProps = {
 };
 
 export const Header: FC<THeaderProps> = ({ handleSkillsClick, ref }) => {
-  const isFilterEnabled = false; //нужно будет получить эту переменную динамически
+  const isFilterEnabled = useSelector(isNotEmptyWithoutSearchSelector);
   const currentUser = useSelector(selectCurrentUser) || null;
 
   const handleLogin = () => {
