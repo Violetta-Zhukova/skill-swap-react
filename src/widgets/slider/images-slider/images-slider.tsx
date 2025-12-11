@@ -23,7 +23,7 @@ export const ImagesSlider: React.FC<TImagesSliderProps> = ({
   const thumbsCount = 3;
 
   useEffect(() => {
-    if (images && mainRef.current?.splide) {
+    if (mainRef.current?.splide) {
       mainRef.current.splide.go(0);
     }
   }, [images]);
@@ -36,16 +36,53 @@ export const ImagesSlider: React.FC<TImagesSliderProps> = ({
   const visibleTotal = 1 + thumbsCount;
   const remaining = total > visibleTotal ? total - visibleTotal : 0;
 
-  const finalOptions = {
+  const finalOptions: Options = {
     ...IMAGES_OPTIONS,
     ...options,
     arrows: (options?.arrows ?? IMAGES_OPTIONS.arrows ?? true) && total > 1,
   };
 
-  const thumbIndices = Array.from(
-    { length: thumbsCount },
-    (_, i) => (currentIndex + 1 + i) % total,
-  );
+  const getThumbIndices = (): number[] => {
+    if (total <= visibleTotal) {
+      const indices: number[] = [];
+
+      // Добавляем следующие после текущей
+      for (let i = 1; i < total; i++) {
+        const nextIdx = (currentIndex + i) % total;
+        if (nextIdx !== currentIndex && !indices.includes(nextIdx)) {
+          indices.push(nextIdx);
+        }
+      }
+
+      // Добавляем предыдущие, если не хватает
+      let offset = 1;
+      while (indices.length < thumbsCount && indices.length < total - 1) {
+        const prevIdx = (currentIndex - offset + total) % total;
+        if (prevIdx !== currentIndex && !indices.includes(prevIdx)) {
+          indices.push(prevIdx);
+        }
+        offset++;
+      }
+
+      return indices.slice(0, thumbsCount);
+    }
+
+    // > 4 — обычное зацикленное поведение
+    return Array.from(
+      { length: thumbsCount },
+      (_, i) => (currentIndex + 1 + i) % total,
+    );
+  };
+
+  const thumbIndices = getThumbIndices();
+  const showPlusOverlay =
+    total > visibleTotal && thumbIndices.length === thumbsCount;
+  const showThumbsColumn = thumbIndices.length > 0;
+
+  // const thumbIndices = Array.from(
+  //   { length: thumbsCount },
+  //   (_, i) => (currentIndex + 1 + i) % total,
+  // );
 
   return (
     <div className={styles.sliderWrapper}>
@@ -54,20 +91,25 @@ export const ImagesSlider: React.FC<TImagesSliderProps> = ({
         options={finalOptions}
         ref={mainRef}
         onMoved={(splide: SplideInstance) => setCurrentIndex(splide.index)}
+        key={images.length > 0 ? images.join(",") : "empty"}
       >
         {images.map((src, i) => (
           <SplideSlide key={i}>
-            <img src={src} alt="" className={styles.mainImage} />
+            <img
+              src={src}
+              alt={`Изображение ${i + 1}`}
+              className={styles.mainImage}
+            />
           </SplideSlide>
         ))}
       </Splide>
 
-      {total > 1 && (
+      {showThumbsColumn && (
         <div className={styles.thumbsColumn}>
           {thumbIndices.map((idx, pos) => {
             const isFirst = pos === 0;
-            const isLast = pos === thumbsCount - 1;
-            const showPlus = isLast && remaining > 0;
+            const isLast = pos === thumbIndices.length - 1;
+            const showPlus = showPlusOverlay && isLast;
 
             const thumbClasses = [
               styles.thumb,
