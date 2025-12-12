@@ -47,12 +47,12 @@ export type TFilters = {
   searchInputValue?: string;
 };
 
-export interface LoginCredentials {
+export interface ILoginCredentials {
   email: string;
   password: string;
 }
 
-export interface ApiUser {
+export interface IApiUser {
   id: number;
   name: string;
   email: string;
@@ -63,20 +63,20 @@ export interface ApiUser {
   birthDate: string;
 }
 
-export interface LoginResponse {
+export interface ILoginResponse {
   status: number;
   data: {
     access_token: string;
     token_type: string;
-    user: ApiUser;
+    user: IApiUser;
   };
   error: string;
 }
 
-export interface UserResponse {
+export interface IUserResponse {
   status: number;
   data: {
-    user: ApiUser;
+    user: IApiUser;
   };
   error: string;
 }

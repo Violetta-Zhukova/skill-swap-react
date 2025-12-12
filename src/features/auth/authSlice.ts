@@ -3,11 +3,11 @@ import {
   type PayloadAction,
   createAsyncThunk,
 } from "@reduxjs/toolkit";
-import type { IUser, LoginCredentials } from "../../entities/types";
-import { authApi, mapApiUserToIUser } from "../../api/auth";
+import type { ILoginCredentials, IApiUser } from "../../entities/types";
+import { authApi } from "../../api/auth";
 
 type TAuthState = {
-  currentUser: IUser | null;
+  currentUser: IApiUser | null;
   isAuthenticated: boolean;
   loading: boolean;
   error: string | null;
@@ -20,16 +20,16 @@ const initialState: TAuthState = {
   error: null,
 };
 
-type LoginResult = {
-  user: IUser;
+type TLoginResult = {
+  user: IApiUser;
   token: string;
 };
 
 export const loginUser = createAsyncThunk<
-  LoginResult,
-  LoginCredentials,
+  TLoginResult,
+  ILoginCredentials,
   { rejectValue: string }
->("auth/login", async (credentials: LoginCredentials, { rejectWithValue }) => {
+>("auth/login", async (credentials: ILoginCredentials, { rejectWithValue }) => {
   try {
     const result = await authApi.loginAndGetUser(credentials);
     return result;
@@ -42,7 +42,7 @@ export const loginUser = createAsyncThunk<
 });
 
 export const fetchUserData = createAsyncThunk<
-  LoginResult,
+  TLoginResult,
   void,
   { rejectValue: string }
 >("auth/fetchUserData", async (_, { rejectWithValue }) => {
@@ -54,7 +54,7 @@ export const fetchUserData = createAsyncThunk<
 
     const userData = await authApi.getUser(token);
     return {
-      user: mapApiUserToIUser(userData),
+      user: userData,
       token,
     };
   } catch (error) {
@@ -73,12 +73,11 @@ export const authSlice = createSlice({
       state.currentUser = null;
       state.isAuthenticated = false;
       state.error = null;
-      localStorage.removeItem("access_token");
     },
     clearError: (state) => {
       state.error = null;
     },
-    setCurrentUser: (state, action: PayloadAction<IUser>) => {
+    setCurrentUser: (state, action: PayloadAction<IApiUser>) => {
       state.currentUser = action.payload;
       state.isAuthenticated = true;
     },
