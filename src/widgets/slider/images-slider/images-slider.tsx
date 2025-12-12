@@ -2,7 +2,7 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 // @ts-expect-error - Библиотека @splidejs/react-splide имеет несовместимую конфигурацию типов
 import type { Splide as SplideInstance } from "@splidejs/react-splide";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import type { Options } from "@splidejs/splide";
 import { IMAGES_OPTIONS } from "../constants/sliderOptions";
 
@@ -22,11 +22,11 @@ export const ImagesSlider: React.FC<TImagesSliderProps> = ({
   const mainRef = useRef<SplideInstance>(null);
   const thumbsCount = 3;
 
-  useEffect(() => {
-    if (mainRef.current?.splide) {
-      mainRef.current.splide.go(0);
-    }
-  }, [images]);
+  // useEffect(() => {
+  //   if (mainRef.current?.splide) {
+  //     mainRef.current.splide.go(0);
+  //   }
+  // }, [images]);
 
   if (!images || images.length === 0) {
     return <div className={styles.noImages}>Нет фотографий</div>;
@@ -83,10 +83,10 @@ export const ImagesSlider: React.FC<TImagesSliderProps> = ({
         options={finalOptions}
         ref={mainRef}
         onMoved={(splide: SplideInstance) => setCurrentIndex(splide.index)}
-        key={images.length > 0 ? images.join(",") : "empty"}
+        key={images.length > 0 ? images[0] : "empty"}
       >
         {images.map((src, i) => (
-          <SplideSlide key={i}>
+          <SplideSlide key={src}>
             <img
               src={src}
               alt={`Изображение ${i + 1}`}
