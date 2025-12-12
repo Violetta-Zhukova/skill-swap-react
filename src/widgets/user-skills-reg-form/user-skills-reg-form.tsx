@@ -1,4 +1,4 @@
-import { useEffect, useMemo, type FC } from "react";
+import { useMemo, type FC } from "react";
 import {
   Controller,
   useForm,
@@ -13,9 +13,8 @@ import { Input } from "../../shared/ui/Input";
 import { DropdownComponent } from "../../shared/ui/dropdown";
 import { useSelector } from "../../features/store";
 import { categoriesSelector } from "../../features/categories/categoriesSlice";
-import ImageUploader, {
-  type IUploadedFile,
-} from "../image-upload-widget/image-upload-widget";
+import ImageUploader from "../image-upload-widget/image-upload-widget";
+import type { ISkillCategory, ISubcategory } from "../../entities/types";
 
 const skillsSchema = yup.object({
   name: yup
@@ -25,8 +24,10 @@ const skillsSchema = yup.object({
       /^[а-яА-ЯёЁ\s-]+$/,
       "Навык может содержать только кириллические символы, пробелы и дефис",
     ),
-  category: yup.string().required("Категория обязательна для заполнения"),
-  subCategory: yup.string().required("Подкатегория обязательна для заполнения"),
+  categoryId: yup.number().required("Категория обязательна для заполнения"),
+  subCategoryId: yup
+    .number()
+    .required("Подкатегория обязательна для заполнения"),
   fullDescription: yup
     .string()
     .required("Описание обязательно для заполнения")
@@ -34,93 +35,66 @@ const skillsSchema = yup.object({
       /^[а-яА-ЯёЁ\s-]+$/,
       "Навык может содержать только кириллические символы, пробелы и дефис",
     ),
-  images: yup
-    .array()
-    .of(yup.mixed<IUploadedFile>())
-    .min(1, "Загрузите хотя бы одно изображение")
-    .required("Изображения обязательны"),
+  // images: yup
+  //   .array()
+  //   .of(yup.mixed<IUploadedFile>())
+  //   .min(1, "Загрузите хотя бы одно изображение")
+  //   .required("Изображения обязательны"),
 });
 
 type TUserSkills = yup.InferType<typeof skillsSchema>;
 
 export const UserSkillsRegForm: FC = () => {
-  const categories = useSelector(categoriesSelector);
+  const categoriesData = useSelector(categoriesSelector);
+  const categoryOptions = useMemo(() => {
+    return categoriesData.map((category: ISkillCategory) => ({
+      name: category.name,
+      value: category.id.toString(),
+    }));
+  }, [categoriesData]);
 
   const {
     register,
     handleSubmit,
     control,
-    setValue,
     trigger,
     formState: { errors, isValid },
   } = useForm<TUserSkills>({
     resolver: yupResolver(skillsSchema),
     defaultValues: {
       name: "",
-      category: "",
-      subCategory: "",
+      categoryId: undefined,
+      subCategoryId: undefined,
       fullDescription: "",
-      images: [],
+      // images: [],
     },
     mode: "onChange",
   });
 
-  const selectedCategory = useWatch({
+  const selectedCategoryId = useWatch({
     control,
-    name: "category",
-    defaultValue: "",
+    name: "categoryId",
   });
 
-  const selectedSubCategory = useWatch({
-    control,
-    name: "subCategory",
-    defaultValue: "",
-  });
-
-  const availableSubcategories = useMemo(() => {
-    if (!selectedCategory) {
+  const subcategoryOptions = useMemo(() => {
+    if (!selectedCategoryId) {
       return [];
     }
 
-    const selectedCategoryData = categories.find(
-      (category) => selectedCategory === category.name,
+    const selectedCategoryData = categoriesData.find(
+      (category: ISkillCategory) => selectedCategoryId === category.id,
     );
 
-    return selectedCategoryData?.subcategories || [];
-  }, [selectedCategory, categories]);
-
-  useEffect(() => {
-    if (selectedSubCategory && selectedCategory) {
-      const isValidSubCategory = availableSubcategories.some(
-        (sub) => sub.name === selectedSubCategory,
-      );
-
-      if (!isValidSubCategory) {
-        setValue("subCategory", "", { shouldValidate: true });
-      }
-    }
-  }, [selectedCategory, selectedSubCategory, availableSubcategories, setValue]);
+    return (selectedCategoryData?.subcategories || []).map(
+      (subcategory: ISubcategory) => ({
+        name: subcategory.name,
+        value: subcategory.id.toString(),
+      }),
+    );
+  }, [selectedCategoryId, categoriesData]);
 
   const onSubmit: SubmitHandler<TUserSkills> = (data) => {
     console.log("Отправленные данные:", data);
-  };
-
-  const handleFilesUploaded = (files: IUploadedFile[]) => {
-    setValue("images", files, { shouldValidate: true });
-    trigger("images");
-  };
-
-  const imagesValue = useWatch({
-    control,
-    name: "images",
-    defaultValue: [],
-  });
-
-  const handleFileRemoved = (removedFile: IUploadedFile) => {
-    const currentFiles = imagesValue as IUploadedFile[];
-    const newFiles = currentFiles.filter((item) => item.id !== removedFile.id);
-    setValue("images", newFiles, { shouldValidate: true });
-    trigger("images");
   };
 
   return (
@@ -148,20 +122,23 @@ export const UserSkillsRegForm: FC = () => {
         <label className={styles.label}>
           Категория навыка
           <Controller
-            name="category"
+            name="categoryId"
             control={control}
             render={({ field, fieldState }) => (
               <DropdownComponent
-                {...field}
-                options={categories}
+                options={categoryOptions}
                 placeholder={"Выберите категорию навыка"}
                 required={false}
-                value={field.value}
-                onChange={(value) => {
-                  field.onChange(value);
-                  trigger("category");
-                  if (value !== selectedCategory) {
-                    setValue("subCategory", "", { shouldValidate: true });
+                value={
+                  field.value !== undefined && field.value !== null
+                    ? field.value.toString()
+                    : ""
+                }
+                onChange={(value: string | string[] | null) => {
+                  if (typeof value === "string") {
+                    const categoryId = value ? parseInt(value, 10) : undefined;
+                    field.onChange(categoryId);
+                    trigger("categoryId");
                   }
                 }}
                 error={fieldState.error?.message}
@@ -173,25 +150,32 @@ export const UserSkillsRegForm: FC = () => {
         <label className={styles.label}>
           Подкатегория навыка
           <Controller
-            name="subCategory"
+            name="subCategoryId"
             control={control}
             render={({ field, fieldState }) => (
               <DropdownComponent
-                {...field}
-                options={availableSubcategories}
+                options={subcategoryOptions}
                 placeholder={
-                  !selectedCategory
+                  !selectedCategoryId
                     ? "Сначала выберите категорию"
                     : "Выберите подкатегорию навыка"
                 }
                 required={false}
-                value={field.value}
+                value={
+                  field.value !== undefined && field.value !== null
+                    ? field.value.toString()
+                    : ""
+                }
                 onChange={(value) => {
-                  field.onChange(value);
-                  trigger("subCategory");
+                  const stringValue = value as string;
+                  const subCategoryId = stringValue
+                    ? parseInt(stringValue, 10)
+                    : undefined;
+                  field.onChange(subCategoryId);
+                  trigger("subCategoryId");
                 }}
                 error={fieldState.error?.message}
-                disabled={!selectedCategory}
+                disabled={!selectedCategoryId}
               />
             )}
           />
@@ -213,13 +197,7 @@ export const UserSkillsRegForm: FC = () => {
         </label>
 
         <div>
-          <ImageUploader
-            onFilesUploaded={handleFilesUploaded}
-            onFileRemoved={handleFileRemoved}
-          />
-          {errors.images && (
-            <span className={styles.error}>{errors.images.message}</span>
-          )}
+          <ImageUploader />
         </div>
 
         <div className={styles.button_section}>
