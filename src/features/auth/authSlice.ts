@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk<
   { rejectValue: string }
 >("auth/login", async (credentials: ILoginCredentials, { rejectWithValue }) => {
   try {
-    const result = await authApi.loginAndGetUser(credentials);
+    const result = await authApi.login(credentials);
     return result;
   } catch (error) {
     if (error instanceof Error) {

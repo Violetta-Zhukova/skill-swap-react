@@ -34,11 +34,25 @@ async function apiRequest<T>(
 }
 
 export const authApi = {
-  async login(credentials: ILoginCredentials): Promise<ILoginResponse> {
-    return apiRequest<ILoginResponse>("/auth/login", {
+  async login(credentials: ILoginCredentials): Promise<{
+    user: IApiUser;
+    token: string;
+  }> {
+    const response = await apiRequest<ILoginResponse>("/auth/login", {
       method: "POST",
       body: JSON.stringify(credentials),
     });
+
+    if (response.status === 200 && response.data.access_token) {
+      localStorage.setItem("access_token", response.data.access_token);
+
+      return {
+        user: response.data.user,
+        token: response.data.access_token,
+      };
+    } else {
+      throw new Error(response.error || "Ошибка авторизации");
+    }
   },
 
   async getUser(token: string): Promise<IApiUser> {
@@ -49,23 +63,5 @@ export const authApi = {
       },
     });
     return response.data.user;
-  },
-
-  async loginAndGetUser(credentials: ILoginCredentials): Promise<{
-    user: IApiUser;
-    token: string;
-  }> {
-    const loginResponse = await this.login(credentials);
-
-    if (loginResponse.status === 200 && loginResponse.data.access_token) {
-      localStorage.setItem("access_token", loginResponse.data.access_token);
-
-      return {
-        user: loginResponse.data.user,
-        token: loginResponse.data.access_token,
-      };
-    } else {
-      throw new Error(loginResponse.error || "Ошибка авторизации");
-    }
   },
 };
