@@ -15,18 +15,17 @@ import { SkillsMenu } from "../widgets/skills-menu";
 import { Login } from "../pages/login";
 import { UserDataRegForm } from "../widgets/user-data-reg-form";
 import { ProfileAvatar } from "../pages/profile/personal-data/avatar";
-import { useRegistrationAvatar } from "../shared/hooks/useRegistrationAvatar";
+import { useRegistrationAvatar } from "../shared/hooks/useRegistrationAvatar"; //удалить после проверки
 
 function App() {
   const dispatch = useDispatch();
-  const { commitAvatar, discardAvatar } = useRegistrationAvatar(); // удалить только commitAvatar после проверки
+  const { commitAvatar, discardAvatar } = useRegistrationAvatar(); // удалить  после проверки
 
   const { users } = useSelector((store) => store.users);
 
   const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
   const headerRef = useRef<HTMLElement>(null);
   const openPopup = () => {
-    discardAvatar();
     setPopupIsOpen(true);
     if (headerRef.current)
       headerRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
