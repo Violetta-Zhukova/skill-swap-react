@@ -277,10 +277,10 @@ export const UserDataRegForm: FC = () => {
         </label>
 
         <div className={styles.button_section}>
-          <Button fullWidth onClick={() => {}} type="secondary">
+          <Button fullWidth type="secondary">
             Назад
           </Button>
-          <Button disabled={!isValid} fullWidth onClick={() => {}}>
+          <Button disabled={!isValid} fullWidth htmlType="submit">
             Продолжить
           </Button>
         </div>
