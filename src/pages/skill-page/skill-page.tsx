@@ -21,10 +21,8 @@ export const SkillPage = () => {
   );
 
   const similarUsers = useMemo(() => {
-    if (!user) return [];
-
     return usersWithSameSkill.filter((u) => u.id !== userId);
-  }, [usersWithSameSkill, user, userId]);
+  }, [usersWithSameSkill, userId]);
 
   if (!user) {
     return <div>Пользователь не найден</div>;
