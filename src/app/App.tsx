@@ -14,6 +14,7 @@ import { PopupMenu } from "../shared/ui/popup-menu";
 import { SkillsMenu } from "../widgets/skills-menu";
 import { HeaderMenuAvatarContent } from "../widgets/header-popup-widget/header-menu-avatar-content";
 import { Login } from "../pages/login";
+import { fetchUserData } from "../features/auth/authSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function App() {
   const closePopupMenuAvatar = () => setPopupMenuAvatarIsOpen(false);
 
   useEffect(() => {
+    dispatch(fetchUserData());
     dispatch(getUsers());
     dispatch(getCategories());
     dispatch(getCities());
