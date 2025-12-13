@@ -22,12 +22,6 @@ export const ImagesSlider: React.FC<TImagesSliderProps> = ({
   const mainRef = useRef<SplideInstance>(null);
   const thumbsCount = 3;
 
-  // useEffect(() => {
-  //   if (mainRef.current?.splide) {
-  //     mainRef.current.splide.go(0);
-  //   }
-  // }, [images]);
-
   if (!images || images.length === 0) {
     return <div className={styles.noImages}>Нет фотографий</div>;
   }
