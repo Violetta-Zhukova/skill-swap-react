@@ -1,11 +1,11 @@
-import React, { useCallback, useMemo, useState, useEffect } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { useDropzone, type FileRejection } from "react-dropzone";
 import styles from "./image-upload-widget.module.css";
 import { ImagesIcon, CrossIcon } from "../../assets/img/icons";
 import { Button } from "../../shared/ui/Button/Button";
 
 export interface IUploadedFile extends File {
-  preview: string;
+  preview?: string;
   id: string;
 }
 
@@ -40,17 +40,6 @@ const ImageUploader: React.FC<IImageUploaderProps> = ({
 }) => {
   const [files, setFiles] = useState<IUploadedFile[]>([]);
   const [errors, setErrors] = useState<string[]>([]);
-
-  useEffect(() => {
-    onFilesUploaded?.(files);
-  }, [files, onFilesUploaded]);
-
-  useEffect(() => {
-    return () => {
-      files.forEach((file) => URL.revokeObjectURL(file.preview));
-    };
-  }, [files]);
-
   const onDrop = useCallback(
     (acceptedFiles: File[], fileRejections: FileRejection[]) => {
       setErrors([]);
@@ -75,13 +64,24 @@ const ImageUploader: React.FC<IImageUploaderProps> = ({
       const filesWithId: IUploadedFile[] = acceptedFiles.map((file) => {
         const filesWithId = Object.assign(file, {
           id: `${file.name}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-          preview: URL.createObjectURL(file),
         });
         return filesWithId as IUploadedFile;
       });
       setFiles((prevFiles) => [...prevFiles, ...filesWithId]);
+      if (onFilesUploaded) {
+        onFilesUploaded(filesWithId);
+      }
+
+      console.log(
+        "Загруженные файлы:",
+        acceptedFiles.map((f) => ({
+          name: f.name,
+          size: f.size,
+          type: f.type,
+        })),
+      );
     },
-    [],
+    [onFilesUploaded],
   );
 
   const { getRootProps, getInputProps, isDragActive, isDragReject } =
@@ -102,12 +102,14 @@ const ImageUploader: React.FC<IImageUploaderProps> = ({
     (fileId: string) => {
       setFiles((prevFiles) => {
         const fileToRemove = prevFiles.find((f) => f.id === fileId);
-
         if (fileToRemove) {
-          URL.revokeObjectURL(fileToRemove.preview);
-          onFileRemoved?.(fileToRemove);
+          if (onFileRemoved) {
+            onFileRemoved(fileToRemove);
+          }
+          console.log("Удален файл:", fileToRemove.name);
+          return prevFiles.filter((file) => file.id !== fileId);
         }
-        return prevFiles.filter((f) => f.id !== fileId);
+        return prevFiles;
       });
     },
     [onFileRemoved],

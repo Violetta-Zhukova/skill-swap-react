@@ -18,17 +18,25 @@ export interface TempAvatarRecord {
   createdAt: Date;
 }
 
+export interface TempSkillImageRecord {
+  id: string;
+  blob: File;
+  createdAt: Date;
+}
+
 class AppDatabase extends Dexie {
   public avatars!: Table<AvatarRecord>;
   public images!: Table<ImageRecord>;
   public tempRegistrationAvatars!: Table<TempAvatarRecord>;
+  public tempSkillImages!: Table<TempSkillImageRecord>;
 
   constructor() {
     super("MyAppStorage");
-    this.version(2).stores({
+    this.version(3).stores({
       avatars: "key",
       tempRegistrationAvatars: "key",
       images: "++id, createdAt",
+      tempSkillImages: "id, createdAt",
     });
   }
 }
