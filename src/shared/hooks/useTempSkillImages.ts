@@ -28,6 +28,7 @@ export function useTempSkillImages() {
   };
 
   const commitImages = async () => {
+    await db.images.clear();
     const tempRecords = await db.tempSkillImages.toArray();
     if (tempRecords.length > 0) {
       const permanentRecords = tempRecords.map((r) => ({
