@@ -11,6 +11,7 @@ export type CardsGalleryPros = {
   maxCards?: number;
   sortable?: boolean;
   sortOnClick?: () => void;
+  sortLabel?: string;
 };
 
 export const CardsGallery = ({
@@ -19,6 +20,7 @@ export const CardsGallery = ({
   maxCards,
   sortable,
   sortOnClick,
+  sortLabel,
 }: CardsGalleryPros) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -53,7 +55,7 @@ export const CardsGallery = ({
             <Button type="tertiary" onClick={sortOnClick || (() => {})}>
               <div className={style.card_gallery_button}>
                 <SortIcon />
-                Сначала новые
+                {sortLabel ?? "Сначала новые"}
               </div>
             </Button>
           )}
