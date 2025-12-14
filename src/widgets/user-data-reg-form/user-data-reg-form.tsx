@@ -17,6 +17,7 @@ import type { ISubcategory } from "../../entities/types";
 import { useSelector } from "../../features/store";
 import { categoriesSelector } from "../../features/categories/categoriesSlice";
 import { citiesSelector } from "../../features/cities/citiesSlice";
+import { useRegistrationAvatar } from "../../shared/hooks/useRegistrationAvatar";
 
 const gender = [
   { name: "Не указан", value: "not specified" },
@@ -56,6 +57,7 @@ type TUserData = yup.InferType<typeof userSchema>;
 export const UserDataRegForm: FC = () => {
   const categories = useSelector(categoriesSelector);
   const cities = useSelector(citiesSelector);
+  const { previewUrl, setAvatar } = useRegistrationAvatar();
 
   const {
     handleSubmit,
@@ -129,7 +131,11 @@ export const UserDataRegForm: FC = () => {
           control={control}
           render={({ field }) => (
             <RegistrationAvatarField
-              onAvatarChange={(file) => field.onChange(file)}
+              avatarUrl={previewUrl}
+              onAvatarChange={(file) => {
+                setAvatar(file);
+                field.onChange(file);
+              }}
             />
           )}
         />
