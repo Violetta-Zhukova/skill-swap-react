@@ -1,10 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Routes, Route } from "react-router-dom";
 import { Header } from "../widgets/header";
 import { Footer } from "../widgets/footer";
-import { UsersPage } from "../pages/users-page";
-import { NotFound404 } from "../pages/not-found-404/NotFound404";
-import { SkillPage } from "../pages/skill-page";
 import { useDispatch } from "../features/store";
 import { getUsers } from "../features/users/usersSlice";
 import { getCategories } from "../features/categories/categoriesSlice";
@@ -13,8 +9,8 @@ import styles from "./App.module.css";
 import { PopupMenu } from "../shared/ui/popup-menu";
 import { SkillsMenu } from "../widgets/skills-menu";
 import { HeaderMenuAvatarContent } from "../widgets/header-popup-widget/header-menu-avatar-content";
-import { Login } from "../pages/login";
 import { fetchUserData } from "../features/auth/authSlice";
+import { ProfileSideMenu } from "../widgets/profile";
 
 function App() {
   const dispatch = useDispatch();
@@ -53,12 +49,7 @@ function App() {
         onProfileClick={openPopupMenuAvatar}
       />
       <main className={styles.content}>
-        <Routes>
-          <Route path="/" element={<UsersPage />} />
-          <Route path="*" element={<NotFound404 />} />
-          <Route path="login" element={<Login />} />
-          <Route path="skill/:id" element={<SkillPage />} />
-        </Routes>
+        <ProfileSideMenu />
       </main>
       <Footer allSkillsOnClick={openPopup} />
       <PopupMenu
