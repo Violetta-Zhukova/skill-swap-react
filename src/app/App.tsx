@@ -1,3 +1,4 @@
+// app.tsx
 import { useEffect, useRef, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Header } from "../widgets/header";
@@ -10,33 +11,89 @@ import { getUsers } from "../features/users/usersSlice";
 import { getCategories } from "../features/categories/categoriesSlice";
 import { getCities } from "../features/cities/citiesSlice";
 import styles from "./App.module.css";
-import { PopupMenu } from "../shared/ui/popup-menu";
+import { PopupMenu, type PopupMenuPosition } from "../shared/ui/popup-menu";
 import { SkillsMenu } from "../widgets/skills-menu";
 import { HeaderMenuAvatarContent } from "../widgets/header-popup-widget/header-menu-avatar-content";
+import { NotificationsMenu } from "../widgets/notifications-menu";
 import { Login } from "../pages/login";
 import { fetchUserData } from "../features/auth/authSlice";
 
+// Тип для контента попапа
+type PopupContent = "skills" | "avatar" | "notifications" | null;
+
 function App() {
   const dispatch = useDispatch();
-
-  const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
   const headerRef = useRef<HTMLElement>(null);
-  const openPopup = () => {
-    setPopupIsOpen(true);
-    if (headerRef.current)
+
+  // Единое состояние для управления попапом
+  const [popupState, setPopupState] = useState<{
+    isOpen: boolean;
+    content: PopupContent;
+    position: PopupMenuPosition;
+  }>({
+    isOpen: false,
+    content: null,
+    position: "bottom-left",
+  });
+
+  // Функция открытия попапа с навыками
+  const openSkillsPopup = () => {
+    setPopupState({
+      isOpen: true,
+      content: "skills",
+      position: "bottom-left",
+    });
+    if (headerRef.current) {
       headerRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
   };
 
-  const [popupMenuAvatarIsOpen, setPopupMenuAvatarIsOpen] =
-    useState<boolean>(false);
-  const openPopupMenuAvatar = () => {
-    setPopupMenuAvatarIsOpen(true);
-    if (headerRef.current)
+  // Функция открытия попапа с аватаром
+  const openAvatarPopup = () => {
+    setPopupState({
+      isOpen: true,
+      content: "avatar",
+      position: "bottom-right",
+    });
+    if (headerRef.current) {
       headerRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
   };
 
-  const closePopup = () => setPopupIsOpen(false);
-  const closePopupMenuAvatar = () => setPopupMenuAvatarIsOpen(false);
+  // Функция открытия попапа с уведомлениями
+  const openNotificationsPopup = () => {
+    setPopupState({
+      isOpen: true,
+      content: "notifications",
+      position: "bottom-right",
+    });
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  };
+
+  // Функция закрытия попапа
+  const closePopup = () => {
+    setPopupState({
+      isOpen: false,
+      content: null,
+      position: "bottom-left",
+    });
+  };
+
+  // Рендер контента в зависимости от типа
+  const renderPopupContent = () => {
+    switch (popupState.content) {
+      case "skills":
+        return <SkillsMenu />;
+      case "avatar":
+        return <HeaderMenuAvatarContent />;
+      case "notifications":
+        return <NotificationsMenu />;
+      default:
+        return null;
+    }
+  };
 
   useEffect(() => {
     dispatch(fetchUserData());
@@ -49,8 +106,9 @@ function App() {
     <div className={styles.page}>
       <Header
         ref={headerRef}
-        handleSkillsClick={openPopup}
-        onProfileClick={openPopupMenuAvatar}
+        handleSkillsClick={openSkillsPopup}
+        onProfileClick={openAvatarPopup}
+        onNotificationsClick={openNotificationsPopup}
       />
       <main className={styles.content}>
         <Routes>
@@ -60,21 +118,16 @@ function App() {
           <Route path="skill/:id" element={<SkillPage />} />
         </Routes>
       </main>
-      <Footer allSkillsOnClick={openPopup} />
+      <Footer allSkillsOnClick={openSkillsPopup} />
+
+      {/* Единый попап */}
       <PopupMenu
         anchorRef={headerRef}
-        isOpen={popupIsOpen}
+        isOpen={popupState.isOpen}
         onClose={closePopup}
+        position={popupState.position}
       >
-        <SkillsMenu />
-      </PopupMenu>
-      <PopupMenu
-        anchorRef={headerRef}
-        isOpen={popupMenuAvatarIsOpen}
-        onClose={closePopupMenuAvatar}
-        position="bottom-right"
-      >
-        <HeaderMenuAvatarContent />
+        {renderPopupContent()}
       </PopupMenu>
     </div>
   );

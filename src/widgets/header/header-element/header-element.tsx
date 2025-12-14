@@ -1,3 +1,4 @@
+// header-element.tsx
 import styles from "./header-element.module.css";
 import type { FC } from "react";
 import { Logo } from "../../../shared/ui/logo";
@@ -18,6 +19,7 @@ type THeaderElementProps = {
   user?: IApiUser | null;
   onLogin?: () => void;
   onProfileClick?: () => void;
+  onNotificationsClick?: () => void;
   ref?: React.Ref<HTMLElement>;
 };
 
@@ -28,6 +30,7 @@ export const HeaderElement: FC<THeaderElementProps> = ({
   ref,
   onLogin = () => console.log("Вход"),
   onProfileClick = () => console.log("Профиль"),
+  onNotificationsClick = () => console.log("Уведомления"),
 }) => {
   return (
     <header ref={ref} className={styles.header}>
@@ -57,7 +60,10 @@ export const HeaderElement: FC<THeaderElementProps> = ({
 
           {user ? (
             <>
-              <button className={styles.icon_button}>
+              <button
+                className={styles.icon_button}
+                onClick={onNotificationsClick}
+              >
                 <BellIcon />
               </button>
               <button className={styles.icon_button}>
