@@ -11,7 +11,7 @@
     "lint": "eslint --fix",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" \"./public/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path ./.prettierignore --list-different",
     "git:add-all": "git add .",
-    "check": "npm run stylelint:fix && npm run format && npm run git:add-all && npm run lint && npm run git:add-all",
+    "check": "npm run stylelint:fix && npm run format && npm run git:add-all && npm run lint && npm run git:add-all && npm run build && npm run git:add-all",
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
