@@ -15,6 +15,7 @@ import { SkillsMenu } from "../widgets/skills-menu";
 import { HeaderMenuAvatarContent } from "../widgets/header-popup-widget/header-menu-avatar-content";
 import { Login } from "../pages/login";
 import { fetchUserData } from "../features/auth/authSlice";
+import { UserFavourites } from "../widgets/user-favourites/user-favourites";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function App() {
         handleSkillsClick={openPopup}
         onProfileClick={openPopupMenuAvatar}
       />
+      <UserFavourites />
       <main className={styles.content}>
         <Routes>
           <Route path="/" element={<UsersPage />} />
