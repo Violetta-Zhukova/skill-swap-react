@@ -20,6 +20,15 @@ describe("citiesSlice", () => {
     { id: 3, name: "Новосибирск" },
   ];
 
+  const mockRootState = {
+    cities: {
+      cities: mockCities,
+      loading: false,
+      status: "fulfilled" as const,
+      error: undefined,
+    },
+  };
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -86,9 +95,13 @@ describe("citiesSlice", () => {
       await store.dispatch(getCities());
 
       const state = store.getState().cities;
-      expect(state.cities).toEqual(mockCities);
-      expect(state.loading).toBe(false);
-      expect(state.status).toBe("fulfilled");
+
+      expect(state).toEqual({
+        cities: mockCities,
+        loading: false,
+        status: "fulfilled",
+        error: undefined,
+      });
       expect(mockedApi.getCities).toHaveBeenCalledTimes(1);
     });
 
@@ -105,39 +118,24 @@ describe("citiesSlice", () => {
       await store.dispatch(getCities());
 
       const state = store.getState().cities;
-      expect(state.cities).toEqual([]);
-      expect(state.loading).toBe(false);
-      expect(state.status).toBe("rejected");
-      expect(state.error).toBe(errorMessage);
+
+      expect(state).toEqual({
+        cities: [],
+        loading: false,
+        status: "rejected",
+        error: errorMessage,
+      });
     });
   });
 
   describe("selectors", () => {
     it("citiesSelector should return cities array", () => {
-      const rootState = {
-        cities: {
-          cities: mockCities,
-          loading: false,
-          status: "fulfilled" as const,
-          error: undefined,
-        },
-      };
-
-      const result = citiesSlice.selectors.citiesSelector(rootState);
+      const result = citiesSlice.selectors.citiesSelector(mockRootState);
       expect(result).toEqual(mockCities);
     });
 
     it("citiesLoadingSelector should return loading state", () => {
-      const rootState = {
-        cities: {
-          cities: mockCities,
-          loading: false,
-          status: "fulfilled" as const,
-          error: undefined,
-        },
-      };
-
-      const result = citiesSlice.selectors.citiesLoadingSelector(rootState);
+      const result = citiesSlice.selectors.citiesLoadingSelector(mockRootState);
       expect(result).toBe(false);
     });
 
