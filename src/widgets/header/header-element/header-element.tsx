@@ -1,4 +1,3 @@
-// header-element.tsx
 import styles from "./header-element.module.css";
 import type { FC } from "react";
 import { Logo } from "../../../shared/ui/logo";

@@ -1,4 +1,3 @@
-// header.tsx
 import { type FC } from "react";
 import { HeaderElement } from "./header-element/header-element";
 import { useSelector } from "../../features/store";

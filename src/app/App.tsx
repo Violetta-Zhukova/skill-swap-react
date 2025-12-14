@@ -1,4 +1,3 @@
-// app.tsx
 import { useEffect, useRef, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Header } from "../widgets/header";
@@ -18,14 +17,12 @@ import { NotificationsMenu } from "../widgets/notifications-menu";
 import { Login } from "../pages/login";
 import { fetchUserData } from "../features/auth/authSlice";
 
-// Тип для контента попапа
 type PopupContent = "skills" | "avatar" | "notifications" | null;
 
 function App() {
   const dispatch = useDispatch();
   const headerRef = useRef<HTMLElement>(null);
 
-  // Единое состояние для управления попапом
   const [popupState, setPopupState] = useState<{
     isOpen: boolean;
     content: PopupContent;
@@ -36,7 +33,6 @@ function App() {
     position: "bottom-left",
   });
 
-  // Функция открытия попапа с навыками
   const openSkillsPopup = () => {
     setPopupState({
       isOpen: true,
@@ -48,7 +44,6 @@ function App() {
     }
   };
 
-  // Функция открытия попапа с аватаром
   const openAvatarPopup = () => {
     setPopupState({
       isOpen: true,
@@ -60,7 +55,6 @@ function App() {
     }
   };
 
-  // Функция открытия попапа с уведомлениями
   const openNotificationsPopup = () => {
     setPopupState({
       isOpen: true,
@@ -72,7 +66,6 @@ function App() {
     }
   };
 
-  // Функция закрытия попапа
   const closePopup = () => {
     setPopupState({
       isOpen: false,
@@ -81,7 +74,6 @@ function App() {
     });
   };
 
-  // Рендер контента в зависимости от типа
   const renderPopupContent = () => {
     switch (popupState.content) {
       case "skills":
@@ -120,7 +112,6 @@ function App() {
       </main>
       <Footer allSkillsOnClick={openSkillsPopup} />
 
-      {/* Единый попап */}
       <PopupMenu
         anchorRef={headerRef}
         isOpen={popupState.isOpen}
