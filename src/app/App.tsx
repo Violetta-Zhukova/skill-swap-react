@@ -55,10 +55,10 @@ function App() {
         handleSkillsClick={openPopup}
         onProfileClick={openPopupMenuAvatar}
       />
-      <UserFavourites />
       <main className={styles.content}>
         <Routes>
           <Route path="/" element={<UsersPage />} />
+          <Route path="favs" element={<UserFavourites />} />
           <Route path="*" element={<NotFound404 />} />
           <Route path="login" element={<Login />} />
           <Route path="skill/:id" element={<SkillPage />} />
