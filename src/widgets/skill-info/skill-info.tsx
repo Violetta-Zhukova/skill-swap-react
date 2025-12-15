@@ -94,7 +94,6 @@ export const SkillInfo = ({
             onClick={handleProposeExchange}
             className={style.swap_button}
             fullWidth
-            disabled={!currentUserId || isExchangeProposed}
             icon={isExchangeProposed ? <ClockIcon /> : undefined}
           >
             {isExchangeProposed ? "Обмен предложен" : "Предложить обмен"}
