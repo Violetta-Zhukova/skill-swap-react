@@ -20,6 +20,7 @@ export const RegisterStep1Page = () => {
               dispatch(setRegFormState({ email, password }));
             }}
             submitButtonText="Далее"
+            mode="register"
           />
         </div>
 
