@@ -13,6 +13,7 @@ export const Login = () => {
             onSubmit={() => {}}
             submitButtonText="Войти"
             optionalLinkText="Зарегистрироваться"
+            optionalLinkUrl="/register/step1"
           />
         </div>
 
