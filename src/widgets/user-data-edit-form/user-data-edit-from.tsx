@@ -41,8 +41,16 @@ type TUserData = yup.InferType<typeof userSchema>;
 
 export const UserDataEditFrom = () => {
   const { cities } = useSelector((store) => store.cities);
-  const { users } = useSelector((store) => store.users);
-  const user = users[0]; // mock user
+  const { currentUser } = useSelector((store) => store.auth);
+
+  const defaultValues: TUserData = {
+    name: "",
+    email: "",
+    birthDate: new Date(),
+    gender: "not specified",
+    location: "",
+    description: "",
+  };
 
   const {
     handleSubmit,
@@ -50,15 +58,29 @@ export const UserDataEditFrom = () => {
     reset,
     trigger,
     formState: { isValid, isDirty },
-  } = useForm({
+  } = useForm<TUserData>({
     resolver: yupResolver(userSchema),
-    defaultValues: { ...user },
+    defaultValues,
     mode: "onChange",
   });
 
   useEffect(() => {
-    if (user) reset(user);
-  }, [user, reset]);
+    if (currentUser)
+      reset({
+        ...defaultValues,
+        ...{
+          name: currentUser.name,
+          email: currentUser.email,
+          birthDate: new Date(currentUser.birthDate),
+          gender:
+            currentUser.gender === "male" || currentUser.gender === "female"
+              ? currentUser.gender
+              : "not specified",
+          location: currentUser.location,
+          description: currentUser.description,
+        },
+      });
+  }, [currentUser, reset]);
 
   const onSubmit: SubmitHandler<TUserData> = (data) => {
     console.log("Отправленные данные:", data);
@@ -186,12 +208,16 @@ export const UserDataEditFrom = () => {
                 trigger("description");
               }}
               className={styles.description_field}
-              isError={!!fieldState.error}
               hint={fieldState.error?.message}
             />
           )}
         />
-        <Button onClick={() => {}} fullWidth disabled={!isValid || !isDirty}>
+        <Button
+          onClick={() => {}}
+          fullWidth
+          disabled={!isValid || !isDirty}
+          htmlType="submit"
+        >
           Сохранить
         </Button>
       </form>
