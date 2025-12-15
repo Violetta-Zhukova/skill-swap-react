@@ -6,7 +6,7 @@ import Lamp from "../../assets/icons/light-bulb.svg";
 import styles from "./login.module.css";
 import {
   loginUser,
-  selectAuthError,
+  selectLoginError,
   clearError,
 } from "../../features/auth/authSlice";
 
@@ -14,7 +14,7 @@ export const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const authError = useSelector(selectAuthError);
+  const authError = useSelector(selectLoginError);
 
   const handleSubmit = async ({
     email,
@@ -48,6 +48,7 @@ export const Login = () => {
             onSubmit={handleSubmit}
             submitButtonText="Войти"
             optionalLinkText="Зарегистрироваться"
+            optionalLinkUrl="/register/step1"
             submitErrorText={
               authError
                 ? "Email или пароль введён неверно. Пожалуйста проверьте правильность введённых данных"
