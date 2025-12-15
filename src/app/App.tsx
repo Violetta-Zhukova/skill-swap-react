@@ -56,7 +56,7 @@ function App() {
       <main className={styles.content}>
         <Routes>
           <Route path="/" element={<UsersPage />} />
-          <Route path="/500" element={<ServerError500 />} />
+          <Route path="/error" element={<ServerError500 />} />
           <Route path="*" element={<NotFound404 />} />
           <Route path="login" element={<Login />} />
           <Route path="skill/:id" element={<SkillPage />} />
