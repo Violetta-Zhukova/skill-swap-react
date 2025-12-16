@@ -11,6 +11,9 @@ import { SearchInput } from "../../../shared/ui/Input";
 import { Button } from "../../../shared/ui/Button/Button";
 import { TextLink } from "../../../shared/ui/text-link";
 import type { IApiUser } from "../../../entities/types";
+import { useRegistrationAvatar } from "../../../shared/hooks/useRegistrationAvatar"; //удалить после маршрутизации авторизации, успешного создания карточки навыков и проверки location
+import { useTempSkillImages } from "../../../shared/hooks/useTempSkillImages"; //удалить после маршрутизации авторизации, успешного создания карточки навыков и проверки location
+import { useNavigate } from "react-router-dom";
 
 type THeaderElementProps = {
   isFilterEnabled: boolean;
@@ -31,6 +34,15 @@ export const HeaderElement: FC<THeaderElementProps> = ({
   onProfileClick = () => console.log("Профиль"),
   onNotificationsClick = () => console.log("Уведомления"),
 }) => {
+  const { discardAvatar } = useRegistrationAvatar();
+  const { discardImages } = useTempSkillImages();
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    discardAvatar();
+    discardImages();
+    navigate("/register/step1");
+  };
   return (
     <header ref={ref} className={styles.header}>
       <nav className={styles.menu}>
@@ -92,7 +104,12 @@ export const HeaderElement: FC<THeaderElementProps> = ({
               >
                 Войти
               </Button>
-              <Button onClick={() => {}} className={styles.register_button}>
+              <Button
+                onClick={handleRegisterClick}
+                className={styles.register_button}
+              >
+                {" "}
+                {/* удалить handleRegisterClick и оставить () => {} в случае если этот элемент пока не нужен*/}
                 Зарегистрироваться
               </Button>
             </>

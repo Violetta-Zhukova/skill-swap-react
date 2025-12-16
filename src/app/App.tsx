@@ -16,6 +16,9 @@ import { HeaderMenuAvatarContent } from "../widgets/header-popup-widget/header-m
 import { NotificationsMenu } from "../widgets/notifications-menu";
 import { Login } from "../pages/login";
 import { fetchUserData } from "../features/auth/authSlice";
+import { RegisterStep1Page } from "../pages/register-step1";
+import { ProtectedRoute } from "../shared/ui/ProtectedRoute";
+import { ServerError500 } from "../pages/server-error-500/ServerError500";
 
 type PopupContent = "skills" | "avatar" | "notifications" | null;
 
@@ -79,7 +82,7 @@ function App() {
       case "skills":
         return <SkillsMenu />;
       case "avatar":
-        return <HeaderMenuAvatarContent />;
+        return <HeaderMenuAvatarContent onClose={closePopup} />;
       case "notifications":
         return <NotificationsMenu />;
       default:
@@ -105,9 +108,18 @@ function App() {
       <main className={styles.content}>
         <Routes>
           <Route path="/" element={<UsersPage />} />
+          <Route path="/error" element={<ServerError500 />} />
           <Route path="*" element={<NotFound404 />} />
           <Route path="login" element={<Login />} />
           <Route path="skill/:id" element={<SkillPage />} />
+          <Route
+            path="register/step1"
+            element={
+              <ProtectedRoute forUnAuth>
+                <RegisterStep1Page />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer allSkillsOnClick={openSkillsPopup} />
