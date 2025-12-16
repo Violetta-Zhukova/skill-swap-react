@@ -48,7 +48,7 @@ export const formsSlice = createSlice({
       state.reg = { ...state.reg, ...action.payload };
     },
     reset: (state) => {
-      state.reg = { ...initialState.reg };
+      state.reg = JSON.parse(JSON.stringify(initialState.reg));
     },
   },
 });

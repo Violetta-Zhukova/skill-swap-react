@@ -145,12 +145,9 @@ export const UserDataRegForm: FC = () => {
         parseInt(id as string, 10),
       ),
       birthDate: data.birthDate.toISOString(),
-      gender:
-        data.gender === "male" ||
-        data.gender === "female" ||
-        data.gender === "not specified"
-          ? data.gender
-          : null,
+      gender: ["male", "female", "not specified"].includes(data.gender)
+        ? data.gender
+        : null,
     };
     dispatch(setRegFormState(dataToSend));
   };
