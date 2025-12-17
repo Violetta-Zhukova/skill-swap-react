@@ -7,8 +7,12 @@ const meta: Meta<typeof Button> = {
   component: Button,
   args: {
     children: "Кнопка",
+    type: "primary",
+    htmlType: "button",
     disabled: false,
     fullWidth: false,
+    iconPosition: "left",
+    className: "",
   },
   argTypes: {
     onClick: { action: "clicked" },
