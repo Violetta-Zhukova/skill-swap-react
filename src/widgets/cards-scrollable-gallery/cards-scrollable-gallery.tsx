@@ -1,74 +1,168 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import type { IUser } from "../../entities/types";
 import { MainUserCard } from "../main-user-card/main-user-card.tsx";
-import style from "./cards-scrollable-gallery.module.css";
+import styles from "./cards-scrollable-gallery.module.css";
 
 export type CardsScrollableGalleryProps = {
   title: string;
   cards: IUser[];
   currentUserId?: string | null;
+  batchSize?: number;
 };
 
 export const CardsScrollableGallery = ({
   title,
   cards,
   currentUserId,
+  batchSize = 4,
 }: CardsScrollableGalleryProps) => {
-  const [visibleCards, setVisibleCards] = useState<number>(6);
+  const [loadedBatches, setLoadedBatches] = useState<number>(1);
+  const [isClient, setIsClient] = useState<boolean>(false);
+
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
-  const batchSize = 6;
+  const isLoadingRef = useRef<boolean>(false);
+  const lastLoadTimeRef = useRef<number>(0);
 
-  // Сбрасываем состояние при изменении cards
-  const [prevCardsLength, setPrevCardsLength] = useState(cards.length);
+  const visibleCards = Math.min(loadedBatches * batchSize, cards.length);
 
-  if (cards.length !== prevCardsLength) {
-    setVisibleCards(6);
-    setPrevCardsLength(cards.length);
-  }
-
-  // Инициализация IntersectionObserver
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "100px",
-      threshold: 0.1,
-    };
+    const timeoutId = window.setTimeout(() => {
+      setIsClient(true);
+    }, 0);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisibleCards((prev) => {
-            const newValue = prev + batchSize;
-            return newValue > cards.length ? cards.length : newValue;
-          });
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setLoadedBatches(1);
+      isLoadingRef.current = false;
+      lastLoadTimeRef.current = 0;
+    }, 0);
+    return () => clearTimeout(timeoutId);
+  }, [cards]);
+
+  const handleIntersection = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      if (!entries.length) return;
+
+      const entry = entries[0];
+      if (!entry.isIntersecting) return;
+
+      const now = Date.now();
+      if (isLoadingRef.current || now - lastLoadTimeRef.current < 300) {
+        return;
+      }
+
+      const currentLoadedBatches = loadedBatches;
+      const nextVisibleCards = (currentLoadedBatches + 1) * batchSize;
+
+      if (nextVisibleCards > cards.length) {
+        return;
+      }
+
+      isLoadingRef.current = true;
+      lastLoadTimeRef.current = now;
+
+      setLoadedBatches((prev) => {
+        const newBatches = prev + 1;
+        const newVisibleCards = newBatches * batchSize;
+
+        if (newVisibleCards >= cards.length) {
+          return Math.ceil(cards.length / batchSize);
         }
-      });
-    }, options);
 
-    if (sentinelRef.current) {
-      observerRef.current.observe(sentinelRef.current);
+        return newBatches;
+      });
+
+      Promise.resolve().then(() => {
+        isLoadingRef.current = false;
+      });
+    },
+    [cards.length, loadedBatches, batchSize],
+  );
+
+  useEffect(() => {
+    if (!isClient) return;
+
+    try {
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: "100px",
+        threshold: 0,
+      });
+      observerRef.current = observer;
+    } catch (error) {
+      console.error("Failed to create IntersectionObserver:", error);
     }
 
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+      isLoadingRef.current = false;
+    };
+  }, [isClient, handleIntersection]);
+
+  useEffect(() => {
+    if (!isClient || !observerRef.current) return;
+
+    const observer = observerRef.current;
+    const sentinelElement = sentinelRef.current;
+
+    if (!sentinelElement) return;
+
+    if (visibleCards >= cards.length || cards.length === 0) {
+      try {
+        observer.unobserve(sentinelElement);
+      } catch {
+        // Игнорируем если элемент уже не наблюдается
+      }
+      return;
+    }
+
+    try {
+      observer.observe(sentinelElement);
+    } catch {
+      // Игнорируем если элемент уже наблюдается
+    }
+
+    return () => {
+      try {
+        observer.unobserve(sentinelElement);
+      } catch {
+        // Игнорируем если элемент уже не наблюдается
       }
     };
-  }, [cards.length]);
+  }, [isClient, visibleCards, cards.length]);
 
-  // Отображаемые карточки
   const displayedCards = useMemo(
     () => cards.slice(0, visibleCards),
     [cards, visibleCards],
   );
 
+  if (cards.length === 0) {
+    return (
+      <div>
+        <div className={styles.gallery_end_text}>
+          <h2>{title}</h2>
+        </div>
+        <div>
+          <p>Нет пользователей для отображения</p>
+        </div>
+      </div>
+    );
+  }
+
+  const hasMoreCards = visibleCards < cards.length;
+
   return (
     <div>
-      <div className={style.card_gallery_header}>
-        <h2 className={style.card_gallery_header_title}>{title}</h2>
+      <div className={styles.card_gallery_header}>
+        <h2>{title}</h2>
       </div>
-      <div className={style.card_gallery_main}>
+      <div className={styles.card_gallery_main}>
         {displayedCards.map((user) => (
           <MainUserCard
             key={`${currentUserId ?? "guest"}-${user.id}`}
@@ -76,20 +170,14 @@ export const CardsScrollableGallery = ({
             currentUserId={currentUserId}
           />
         ))}
-        <div
-          ref={sentinelRef}
-          style={{
-            height: "10px",
-            width: "100%",
-            position: "relative",
-            top: "-100px",
-            visibility: visibleCards >= cards.length ? "hidden" : "visible",
-          }}
-        />
+        {hasMoreCards && (
+          <div
+            ref={sentinelRef}
+            className={styles.scroll_sentinel}
+            aria-hidden="true"
+          />
+        )}
       </div>
-      {visibleCards < cards.length && (
-        <div className={style.loading_indicator}>Загружаем еще карточки...</div>
-      )}
     </div>
   );
 };

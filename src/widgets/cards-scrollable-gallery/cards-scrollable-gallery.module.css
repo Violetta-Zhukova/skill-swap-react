@@ -1,10 +1,3 @@
-.loading_indicator {
-  padding: 20px;
-  color: #666666;
-  font-size: 14px;
-  text-align: center;
-}
-
 .card_gallery_header {
   display: flex;
   flex-direction: row;
@@ -22,10 +15,17 @@
   gap: 24px;
 }
 
-.card_gallery_button {
-  display: flex;
+.scroll_sentinel {
+  position: relative;
+  top: -100px;
+  width: 100%;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.card_gallery_actions {
-  display: flex;
+.gallery_end_text {
+  color: var(--caption-color);
+  font-size: var(--font-size-main);
+  font-family: var(--font-main);
 }
