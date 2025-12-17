@@ -1,4 +1,4 @@
-export { Input } from "./Input";
-export { PasswordInput } from "./PasswordInput";
-export { SearchInput } from "./SearchInput";
-export { EditInput } from "./EditInput";
+export { Input } from "./input";
+export { PasswordInput } from "./password-input";
+export { SearchInput } from "./search-input";
+export { EditInput } from "./edit-input";

@@ -1,6 +1,6 @@
 import styles from "./notifications-menu.module.css";
 import { LightbulbIcon } from "../../assets/img/icons";
-import { Button } from "../../shared/ui/Button/Button";
+import { Button } from "../../shared/ui/button/button";
 
 type Notification = {
   id: number;

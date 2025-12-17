@@ -1,6 +1,6 @@
 import type { TSkill } from "../../entities/types";
 import { ImagesSlider } from "../slider/images-slider/images-slider";
-import { Button } from "../../shared/ui/Button/Button";
+import { Button } from "../../shared/ui/button/button";
 import {
   HeartIcon,
   ShareIcon,
