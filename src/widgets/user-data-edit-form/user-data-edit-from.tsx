@@ -17,7 +17,7 @@ import { DateSelectionInput } from "../../shared/ui/input/date-selection-input";
 import { DropdownComponent } from "../../shared/ui/dropdown";
 import { EditTextarea } from "../../shared/ui/edit-textarea";
 import { ProfileAvatar } from "../../pages/profile/personal-data/avatar";
-import { updateUserData } from "../../features/user/actions";
+import { updateUserAvatar, updateUserData } from "../../features/user/actions";
 import { useRegistrationAvatar } from "../../shared/hooks/useRegistrationAvatar";
 
 const gender = [
@@ -49,7 +49,8 @@ type TUserData = yup.InferType<typeof userDataSchema>;
 
 export const UserDataEditFrom = () => {
   const dispatch = useDispatch();
-  const { avatarFile, previewUrl, setAvatar } = useRegistrationAvatar();
+  const { avatarFile, previewUrl, setAvatar, discardAvatar } =
+    useRegistrationAvatar();
   const { cities } = useSelector((store) => store.cities);
   const { currentUser } = useSelector((store) => store.auth);
 
@@ -114,6 +115,11 @@ export const UserDataEditFrom = () => {
       userDescription: data.description,
     };
     dispatch(updateUserData(dataToSend));
+    if (avatarFile) {
+      const data = { avatar: avatarFile, id: currentUser!.id.toString() };
+      dispatch(updateUserAvatar(data));
+      discardAvatar();
+    }
     reset(data);
   };
 
