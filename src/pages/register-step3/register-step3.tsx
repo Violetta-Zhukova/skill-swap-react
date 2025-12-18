@@ -11,10 +11,10 @@ import { useTempSkillImages } from "../../shared/hooks/useTempSkillImages";
 import { useRegistrationAvatar } from "../../shared/hooks/useRegistrationAvatar";
 import {
   clearError,
-  registerUser,
   selectAuthLoading,
   selectRegisterError,
-} from "../../features/auth/authSlice";
+} from "../../features/user/userSlice";
+import { registerUser } from "../../features/user/actions";
 import { Loader } from "../../shared/ui/loader";
 import { ModalConfirm } from "../../widgets/modal-confirm/modal-confirm";
 import Done from "../../assets/icons/done.svg";

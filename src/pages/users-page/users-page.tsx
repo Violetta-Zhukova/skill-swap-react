@@ -6,7 +6,7 @@ import { getFilteredUsers } from "../../entities/get-filtered-users";
 import { CardsGallery } from "../../widgets/gallery-cards";
 import { isNotEmptySelector } from "../../features/filters/filtersSlice";
 import { CardsScrollableGallery } from "../../widgets/cards-scrollable-gallery/cards-scrollable-gallery";
-import { selectCurrentUser } from "../../features/auth/authSlice";
+import { selectCurrentUser } from "../../features/user/userSlice";
 
 const MONTH_IN_MS = 30 * 24 * 60 * 60 * 1000;
 const NOW = Date.now();

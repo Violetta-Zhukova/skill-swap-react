@@ -3,7 +3,7 @@ import { LightbulbIcon } from "../../assets/img/icons";
 import { Button } from "../../shared/ui/button/button";
 import { getSelectedUsers } from "../../shared/lib/proposals";
 import { useSelector } from "../../features/store";
-import { selectCurrentUser } from "../../features/auth/authSlice";
+import { selectCurrentUser } from "../../features/user/userSlice";
 import { usersSelector } from "../../features/users/usersSlice";
 import type { IUser } from "../../entities/types";
 

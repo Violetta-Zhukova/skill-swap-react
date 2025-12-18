@@ -7,7 +7,7 @@ import style from "./skill-info.module.css";
 
 import { categoriesSelector } from "../../features/categories/categoriesSlice";
 import { useSelector } from "../../features/store";
-import { selectCurrentUser } from "../../features/auth/authSlice";
+import { selectCurrentUser } from "../../features/user/userSlice";
 import { addProposal, hasProposal } from "../../shared/lib/proposals";
 import { useLike } from "../../shared/hooks/useLike";
 

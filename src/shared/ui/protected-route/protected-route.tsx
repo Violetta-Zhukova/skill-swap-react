@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "../../../features/store";
-import { authSlice } from "../../../features/auth/authSlice";
+import { userSlice } from "../../../features/user/userSlice";
 
 type ProtectedRouteProps = {
   children: ReactNode;
@@ -12,7 +12,7 @@ export const ProtectedRoute = ({
   children,
   forUnAuth = false,
 }: ProtectedRouteProps) => {
-  const currentUser = useSelector(authSlice.selectors.selectCurrentUser);
+  const currentUser = useSelector(userSlice.selectors.selectCurrentUser);
   const location = useLocation();
 
   // Если страница для неавторизованных пользователей

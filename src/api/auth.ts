@@ -5,6 +5,7 @@ import type {
   ILoginCredentials,
   TRegForm,
   IAvatarResponse,
+  TUserDataForm,
 } from "../entities/types";
 import { apiRequest, apiFileRequest } from "./base";
 
@@ -83,7 +84,7 @@ export const authApi = {
     if (avatarResponse.status === 200 && avatarResponse.data.avatar) {
       resultUser.avatarUrl = avatarResponse.data.avatar;
     } else {
-      throw new Error(avatarResponse.error || "Ошибка регистрации");
+      throw new Error(avatarResponse.error || "Ошибка при загрузке аватара");
     }
     resultUser.avatarUrl = avatarResponse.data.avatar;
 
@@ -98,9 +99,26 @@ export const authApi = {
     });
 
     if (imagesReponse.status !== 200) {
-      throw new Error(imagesReponse.error || "Ошибка регистрации");
+      throw new Error(imagesReponse.error || "Ошибка при загрузке изображений");
     }
 
     return { user: resultUser, token: userResponse.data.access_token };
+  },
+
+  async updateUser(data: TUserDataForm, token: string): Promise<IApiUser> {
+    const response = await apiRequest<IUserResponse>("/user/", {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    });
+    if (response.status === 200) {
+      return response.data.user;
+    } else {
+      throw new Error(
+        response.error || "Ошибка обновления данных пользователя",
+      );
+    }
   },
 };

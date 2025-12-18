@@ -2,7 +2,7 @@ import styles from "./header-menu-avatar-content.module.css";
 import { LogoutIcon } from "../../assets/img/icons";
 import { Button } from "../../shared/ui/button/button";
 import { useDispatch } from "../../features/store";
-import { logout } from "../../features/auth/authSlice";
+import { logout } from "../../features/user/userSlice";
 import { useNavigate } from "react-router-dom";
 
 export const HeaderMenuAvatarContent = ({

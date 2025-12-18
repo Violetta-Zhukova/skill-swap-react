@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { HeaderElement } from "./header-element/header-element";
 import { useSelector } from "../../features/store";
-import { selectCurrentUser } from "../../features/auth/authSlice";
+import { selectCurrentUser } from "../../features/user/userSlice";
 import { isNotEmptyWithoutSearchSelector } from "../../features/filters/filtersSlice";
 import { useNavigate } from "react-router-dom";
 

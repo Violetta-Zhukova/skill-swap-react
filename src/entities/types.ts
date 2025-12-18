@@ -111,8 +111,21 @@ export type TRegForm = {
   };
 };
 
+export type TUserDataForm = Omit<
+  TRegForm,
+  | "categoryWantToLearn"
+  | "subcategoryWantToLearn"
+  | "skillCanTeach"
+  | "password"
+> & { userDescription: string };
+
 export interface IRegData {
   form: TRegForm;
   avatar: File;
   images: File[];
 }
+
+export type TLoginResult = {
+  user: IApiUser;
+  token: string;
+};

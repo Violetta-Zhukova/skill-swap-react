@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "../../features/store";
 import {
   selectCurrentUserFavourites,
   setCurrentUserFavourites,
-} from "../../features/auth/authSlice";
+} from "../../features/user/userSlice";
 import { addElementInArray, excludeElementFromArray } from "../lib/helpers";
 import { computeIsLiked, updateUserFavourites } from "../lib/favourites";
 

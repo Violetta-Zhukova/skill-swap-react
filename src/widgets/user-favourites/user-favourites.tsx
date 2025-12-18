@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useSelector } from "../../features/store";
 import { usersSelector } from "../../features/users/usersSlice";
-import { selectCurrentUserFavourites } from "../../features/auth/authSlice";
+import { selectCurrentUserFavourites } from "../../features/user/userSlice";
 import { CardsGallery } from "../gallery-cards";
 import type { IUser } from "../../entities/types";
 import { Button } from "../../shared/ui/button/button";

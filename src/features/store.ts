@@ -8,7 +8,7 @@ import { citiesSlice } from "./cities/citiesSlice";
 import { categoriesSlice } from "./categories/categoriesSlice";
 import { usersSlice } from "./users/usersSlice";
 import { filtersSlice } from "./filters/filtersSlice";
-import { authSlice } from "./auth/authSlice";
+import { userSlice } from "./user/userSlice";
 import { formsSlice } from "./forms/formsSlice";
 
 const rootReducer = combineSlices(
@@ -16,7 +16,7 @@ const rootReducer = combineSlices(
   categoriesSlice,
   usersSlice,
   filtersSlice,
-  authSlice,
+  userSlice,
   formsSlice,
 );
 

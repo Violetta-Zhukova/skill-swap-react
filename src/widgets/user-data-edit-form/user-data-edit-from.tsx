@@ -3,7 +3,7 @@ import styles from "./user-data-edit-from.module.css";
 import { Controller, useForm, type SubmitHandler } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useSelector } from "../../features/store";
+import { useDispatch, useSelector } from "../../features/store";
 import { useEffect, useMemo } from "react";
 
 import { EditInput } from "../../shared/ui/input";
@@ -12,6 +12,7 @@ import { DateSelectionInput } from "../../shared/ui/input/date-selection-input";
 import { DropdownComponent } from "../../shared/ui/dropdown";
 import { EditTextarea } from "../../shared/ui/edit-textarea";
 import { ProfileAvatar } from "../../pages/profile/personal-data/avatar";
+import { updateUserData } from "../../features/user/actions";
 
 const gender = [
   { name: "Не указан", value: "not specified" },
@@ -40,6 +41,7 @@ const userSchema = yup.object({
 type TUserData = yup.InferType<typeof userSchema>;
 
 export const UserDataEditFrom = () => {
+  const dispatch = useDispatch();
   const { cities } = useSelector((store) => store.cities);
   const { currentUser } = useSelector((store) => store.auth);
 
@@ -85,7 +87,17 @@ export const UserDataEditFrom = () => {
   }, [currentUser, defaultValues, reset]);
 
   const onSubmit: SubmitHandler<TUserData> = (data) => {
-    console.log("Отправленные данные:", data);
+    const dataToSend = {
+      name: data.name,
+      email: data.email,
+      location: data.location,
+      birthDate: data.birthDate.toISOString(),
+      gender: ["male", "female", "not specified"].includes(data.gender)
+        ? data.gender
+        : null,
+      userDescription: data.description,
+    };
+    dispatch(updateUserData(dataToSend));
     reset(data);
   };
 

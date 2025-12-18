@@ -4,11 +4,8 @@ import { AuthForm } from "../../widgets/auth-form";
 import { RegisterStepInfo } from "../../widgets/register-step-info";
 import Lamp from "../../assets/icons/light-bulb.svg";
 import styles from "./login.module.css";
-import {
-  loginUser,
-  selectLoginError,
-  clearError,
-} from "../../features/auth/authSlice";
+import { selectLoginError, clearError } from "../../features/user/userSlice";
+import { loginUser } from "../../features/user/actions";
 
 export const Login = () => {
   const dispatch = useDispatch();

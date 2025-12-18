@@ -15,7 +15,7 @@ import { SkillsMenu } from "../widgets/skills-menu";
 import { HeaderMenuAvatarContent } from "../widgets/header-popup-widget/header-menu-avatar-content";
 import { NotificationsMenu } from "../widgets/notifications-menu";
 import { Login } from "../pages/login";
-import { fetchUserData } from "../features/auth/authSlice";
+import { fetchUserData } from "../features/user/actions";
 import { RegisterStep1Page } from "../pages/register-step1";
 import { RegisterStep2Page } from "../pages/register-step2";
 import { RegisterStep3Page } from "../pages/register-step3";

@@ -5,7 +5,7 @@ import { MainUserCard } from "../main-user-card/main-user-card.tsx";
 import style from "./cards-gallery.module.css";
 import { SortIcon, RightIcon } from "../../assets/img/icons";
 import { useSelector } from "../../features/store";
-import { selectCurrentUser } from "../../features/auth/authSlice";
+import { selectCurrentUser } from "../../features/user/userSlice.ts";
 
 export type CardsGalleryPros = {
   title: string;
