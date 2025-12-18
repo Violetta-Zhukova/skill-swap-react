@@ -247,9 +247,10 @@ export const UserSkillsRegForm: FC<TUserSkillsRegFormProps> = ({
             fullWidth
             type="secondary"
             onClick={() => {
-              navigate("/register/step2", { state: { from: "step3" } });
+              navigate("/register/step2");
               dispatchSkill(getValues());
             }}
+            htmlType="button"
           >
             Назад
           </Button>
