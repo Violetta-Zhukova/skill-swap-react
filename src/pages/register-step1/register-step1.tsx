@@ -40,7 +40,7 @@ export const RegisterStep1Page = () => {
           <AuthForm
             onSubmit={({ email, password }) => {
               dispatch(setRegFormState({ email, password }));
-              navigate("/register/step2");
+              navigate("/register/step2", { state: { from: "step1" } });
             }}
             submitButtonText="Далее"
             mode="register"
