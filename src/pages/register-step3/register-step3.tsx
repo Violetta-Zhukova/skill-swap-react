@@ -41,7 +41,7 @@ export const RegisterStep3Page = () => {
     if (!reg.email) {
       navigate("/register/step1");
     }
-  }, [navigate]);
+  }, [navigate, reg.email]);
 
   return (
     <div className={styles.page}>
