@@ -250,6 +250,7 @@ export const UserSkillsRegForm: FC<TUserSkillsRegFormProps> = ({
               navigate("/register/step2", { state: { from: "step3" } });
               dispatchSkill(getValues());
             }}
+            htmlType="button"
           >
             Назад
           </Button>
