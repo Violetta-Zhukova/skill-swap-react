@@ -10,6 +10,7 @@ import { useSelector } from "../../features/store";
 import { selectCurrentUser } from "../../features/user/userSlice";
 import { addProposal, hasProposal } from "../../shared/lib/proposals";
 import { useLike } from "../../shared/hooks/useLike";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export type TSkillInfoProps = {
   skill: TSkill;
@@ -24,6 +25,8 @@ export const SkillInfo = ({
   ownerUserId,
   onProposalConfirmOpen,
 }: TSkillInfoProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const categories = useSelector(categoriesSelector);
 
   const currentUser = useSelector(selectCurrentUser);
@@ -42,10 +45,14 @@ export const SkillInfo = ({
   });
 
   const handleProposeExchange = () => {
-    if (!currentUserId || isExchangeProposed) return;
+    if (isExchangeProposed) return;
 
-    addProposal(currentUserId, ownerUserId);
-    onProposalConfirmOpen?.();
+    if (currentUserId) {
+      addProposal(currentUserId, ownerUserId);
+      onProposalConfirmOpen?.();
+    } else {
+      navigate("/login", { replace: true, state: { from: location.pathname } });
+    }
   };
 
   return (
