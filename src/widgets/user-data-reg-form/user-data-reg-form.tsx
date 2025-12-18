@@ -316,7 +316,7 @@ export const UserDataRegForm: FC = () => {
             type="secondary"
             onClick={() => {
               dispatchData(getValues());
-              navigate("/register/step1");
+              navigate("/register/step1", { state: { from: "step2" } });
             }}
             htmlType="button"
           >
