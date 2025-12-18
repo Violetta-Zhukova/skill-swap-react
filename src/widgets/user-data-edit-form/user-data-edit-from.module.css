@@ -1,4 +1,5 @@
 .wrapper {
+  inline-size: 100%;
   min-inline-size: 752px;
   padding: 60px;
   background-color: var(--card-input-color);
@@ -8,7 +9,7 @@
 
 .form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: minmax(min-content, 460px) 1fr;
   flex-grow: 1;
 }
 
